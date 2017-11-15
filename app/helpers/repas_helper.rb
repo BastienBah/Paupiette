@@ -4,6 +4,11 @@ module RepasHelper
     @users.each do |user|
       @array << user.ville
     end
+    @array.each do |array|
+      if array == ""
+        array.delete
+      end
+    end
     @array2 = @array.uniq
     return @array2
   end

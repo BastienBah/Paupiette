@@ -109,3 +109,37 @@ select::after{
     margin: 0;
   }
 }
+
+.city-selector {
+  width:40vw;
+  padding:2em;
+  text-align: center;
+  margin: auto;
+  ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    width:100%;
+    margin:2em auto;
+    padding:0;
+    li {
+      width:fit-content;
+      padding:4px 7px;
+      color:white;
+      text-decoration: none;
+      -webkit-transition: 0.4s ease-in;
+      -o-transition: 0.4s ease-in;
+      transition: 0.4s ease-in;
+      border:1px solid transparent;
+      margin:0 2em;
+
+      &:hover {
+        background: white;
+        color:#5B1633;
+        border:1px solid #5B1633;
+
+      }
+    }
+  }
+}
