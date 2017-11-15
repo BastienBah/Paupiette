@@ -8,14 +8,18 @@
     </div>
   </div>
 </div>
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<div class="container">
+  <h2>Vos informations</h2>
+</div>
 <div class="container">
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
 
 <% if @user.role %>
 <div class="row">
-<div class="col-lg-6">
+  <div class="col-lg-8">
+<div class="row edit-user-container bkg-light-grey">
+<div class="col-lg-6 flex-user-edit">
   <div class="field">
     <%= f.label :ville %>
     <select class="" name="composition">
@@ -83,6 +87,8 @@
   </div>
 </div>
 </div>
+</div>
+</div>
 <% else %>
 <div class="">
   <div class="field">
@@ -126,7 +132,7 @@
   </div>
 <% end %>
 
-    <div class="">
+    <div class="actual_pass">
       <%= f.label :Mot_de_passe_actuel %>
       <%= f.password_field :current_password, hint: "We need your current password to confirm your changes.", required: true %>
     </div>

@@ -475,3 +475,38 @@ margin-left: 0px;
 .mobile-list li:hover{
   border: 10px solid #494848;
 }
+
+.dashboard .index-repas{
+  margin-bottom: 20px!important;
+}
+
+.edit-user-container{
+
+}
+
+.edit-user-container .field{
+  margin-top: 20px;
+}
+
+.edit-user-container{
+  padding: 20px;
+}
+
+.actual_pass{
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.flex-user-edit{
+
+}
+
+.edit-user-container .field{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.edit-user-container .field input, .edit-user-container .field select{
+  width: 50%;
+}

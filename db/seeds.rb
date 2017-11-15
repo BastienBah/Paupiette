@@ -15,3 +15,7 @@ User.create( email: "student@gmail.com", created_at: "2017-11-14 10:27:38", upda
 User.create( email: "parisien@gmail.com", created_at: "2017-11-14 10:27:38", updated_at: "2017-11-14 10:29:50", admin: false, password: "azerty",role: false, ville: "Paris", code_postal: nil, rue: nil, numero_rue: nil, complement_adresse: nil, nom: nil, prenom: "Booba", telephone: nil, quartier: nil )
 
 User.create( email: "admin@admin.com", created_at: "2017-11-14 10:27:38", updated_at: "2017-11-14 10:29:50", admin: true, password: "azerty",role: nil, ville: "Paris", code_postal: nil, rue: nil, numero_rue: nil, complement_adresse: nil, nom: nil, prenom: "Booba", telephone: nil, quartier: nil )
+
+Repa.destroy_all
+Participation.destroy_all
+Message.destroy_all

@@ -27,7 +27,7 @@ class RepasController < ApplicationController
   def create
     @repa = Repa.new(repa_params)
     @repa.user = current_user
-    
+
     #Validation prix repas
 
     respond_to do |format|
@@ -73,6 +73,6 @@ class RepasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def repa_params
-      params.require(:repa).permit(:titre, :descritpion, :date)
+      params.require(:repa).permit(:titre, :descritpion, :date, :prix, :entree, :plat, :dessert)
     end
 end

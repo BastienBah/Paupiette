@@ -7,6 +7,33 @@
         <h1>Annonces de repas</h1>
       </div>
     </div>
+<<<<<<< Updated upstream
+=======
+  </div>
+
+  <div class="container">
+    <% @repas.each do |repa| %>
+      <% if User.find(repa.user_id).ville == get_selected_city %>
+        <div class="row repas">
+          <div class="col-lg-12 bkg-light-grey no-padding flex">
+            <div class="col-lg-2 bkg-med-grey img-repas">
+            </div>
+            <div class="col-lg-3 p-15">
+                  <h2><%= repa.titre %></h2>
+                  <p class="sous-titre">chez <%= repa.user.prenom %></p>
+                  <p class="font-dark-grey no-margin-b"><%= repa.menu %><p>
+                  <%= link_to 'voir plus...', repa, :class => 'repas-show' %>
+                  <% if current_user.id == repa.id %>
+                    <%= link_to 'Edit', edit_repa_path(repa) %>
+                  <% end %>
+            </div>
+            <div class="col-lg-3 p-15 font-dark-grey">
+              <p>à <%= repa.user.ville %> le <%= repa.date.strftime("%d/%m/%y") %></p>
+            </div>
+            <div class="col-lg-2 flex-center">
+              <span class="price">7€</span>
+            </div>
+>>>>>>> Stashed changes
 
     <div class="container">
       <ul>
@@ -52,6 +79,7 @@
 
             </div>
           </div>
+<<<<<<< Updated upstream
         <% end %>
       <% end %>
     </div>
@@ -60,6 +88,20 @@
     <div class="container">
       <%= image_tag "mockup.jpg", :class => "coming-soon" %>
     </div>
+=======
+        </div>
+        <!-- <div class="col-lg-2 bkg-violet flex-center font-white resbutton">
+          <%= link_to root_path, class: "flex-center" do %>
+          <p>Réserver</p>
+          <% end %>
+        </div>
+      </div>
+    </div> !-->
+    <% end %>
+    <% end %>
+
+  </div>
+>>>>>>> Stashed changes
   <% end %>
 </section>
 
