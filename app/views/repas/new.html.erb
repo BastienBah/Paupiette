@@ -1,0 +1,126 @@
+<section class="repas-new">
+  <div class="container">
+<%= link_to image_tag('back.svg'), repas_path, :class => "back-return" %>
+<div class="titre-repas">
+  <h1>Ajouter un repas</h1>
+</div>
+
+
+<div class="row">
+  <div class="col-lg-8 bkg-light-grey ">
+    <%= form_for(@repa) do |f| %>
+    <div class="row">
+    <div class="col-lg-6 vertical-center flex-columns">
+      <% if @repa.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@repa.errors.count, "error") %> prohibited this repa from being saved:</h2>
+
+          <ul>
+          <% @repa.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div class="field">
+        <%= f.label :titre %>
+        <%= f.text_field :titre, :placeholder => "ex: Paëla Royale" %>
+      </div>
+
+      <div class="field date">
+        <%= f.label :date %>
+        <%= f.datetime_select :date %>
+      </div>
+</div>
+
+<div class="col-lg-6 vertical-center flex-columns">
+      <div class="field">
+        <%= f.label :menu %>
+        <select id="selector-meal" class="" name="composition">
+          <option value="1">Plat</option>
+          <option value="2">Entrée / Plat</option>
+          <option value="3">Plat / Dessert</option>
+          <option value="4">Entrée / Plat / Dessert</option>
+        </select>
+      </div>
+
+      <div id="" class="field">
+        <%= f.label :entree %>
+        <%= f.text_field :entree, :id => "entree", :placeholder => "Description" %>
+      </div>
+
+      <div id="" class="field">
+        <%= f.label :plat %>
+        <%= f.text_field :plat, :id => "plat", :placeholder => "Description" %>
+      </div>
+
+      <div id="" class="field">
+        <%= f.label :dessert %>
+        <%= f.text_field :dessert, :id => "dessert", :placeholder => "Description" %>
+      </div>
+
+</div>
+</div>
+      <div class="actions">
+        <%= f.submit "Valider", :class => "valrepas" %>
+      </div>
+    <% end %>
+  </div>
+  <div class="col-lg-4 vertical-center text-center">
+    <p>Bonjour <%= current_user.prenom %>, bienvenue sur l'assistant de création de repas.</p>
+  </div>
+</div>
+
+</div>
+</section>
+<%= @test %>
+
+
+<script type="text/javascript">
+
+  var selector = document.getElementById('selector-meal');
+  var plat = document.getElementById('plat');
+  var entree = document.getElementById('entree');
+  var dessert = document.getElementById('dessert');
+
+  document.getElementById('selector-meal').addEventListener('change', function(){
+    switch (selector.value) {
+      case "1":
+        console.log("plat only");
+        plat.disabled = false;
+        entree.disabled = true;
+        dessert.disabled = true;
+        break;
+      case "2":
+      console.log("plat entree");
+      plat.disabled = false;
+      entree.disabled = false;
+      dessert.disabled = true;
+      break;
+      case "3":
+      plat.disabled = false;
+      entree.disabled = true;
+      dessert.disabled = true;
+      break;
+      case "4":
+      plat.disabled = false;
+      entree.disabled = false;
+      dessert.disabled = false;
+        break;
+      default:
+
+    }
+  });
+
+  function checkFields(){
+    console.log(selector.value);
+  }
+
+</script>
+
+<style media="screen">
+  select{
+    background: url('<%= image_url('arrow-down.svg') %>')
+  }
+</style>

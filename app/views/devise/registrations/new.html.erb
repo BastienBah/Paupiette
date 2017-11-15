@@ -1,0 +1,141 @@
+<section class="sign-container">
+  <div class="tiny-container">
+<h2>S'inscrire</h2>
+
+<% @role = params[:role] %>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+  <% if @user.role %>
+  <div class="">
+    <div class="field">
+      <%= f.label :ville %>
+      <select class="" name="composition">
+        <option value="Bordeaux">Bordeaux</option>
+        <option value="Paris">Paris</option>
+        <option value="3">?</option>
+        <option value="4">?</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <%= f.label :nom %>
+      <%= f.text_field :nom %>
+    </div>
+
+    <div class="field">
+      <%= f.label :prenom %>
+      <%= f.text_field :prenom %>
+    </div>
+
+    <div class="field">
+      <%= f.label :email %>
+      <%= f.email_field :email, autofocus: true %>
+    </div>
+
+    <div class="field">
+      <%= f.label :telephone %>
+      <%= f.text_field :telephone %>
+    </div>
+
+    <div class="field">
+      <%= f.label :password %>
+      <%= f.password_field :password, autocomplete: "off" %>
+    </div>
+
+    <div class="field">
+      <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :numero_rue %>
+      <%= f.text_field :numero_rue %>
+    </div>
+
+    <div class="field">
+      <%= f.label :rue %>
+      <%= f.text_field :rue %>
+    </div>
+
+    <div class="field">
+      <%= f.label :complement_adresse %>
+      <%= f.text_field :complement_adresse, placeholder: "Facultatif" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :code_postal %>
+      <%= f.text_field :code_postal %>
+    </div>
+
+    <div class="field">
+      <%= f.label :quartier %>
+      <%= f.text_field :quartier, placeholder: "Facultatif" %>
+    </div>
+  <% else %>
+  <div class="">
+    <div class="field">
+      <%= f.label :ville %>
+      <select class="" name="composition">
+        <option value="Bordeaux">Bordeaux</option>
+        <option value="Paris">Paris</option>
+        <option value="3">?</option>
+        <option value="4">?</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <%= f.label :nom %>
+      <%= f.text_field :nom, require: true %>
+    </div>
+
+    <div class="field">
+      <%= f.label :prenom %>
+      <%= f.text_field :prenom, require: true %>
+    </div>
+
+    <div class="field">
+      <%= f.label :email %>
+      <%= f.email_field :email, autofocus: true %>
+    </div>
+
+    <div class="field">
+      <%= f.label :telephone %>
+      <%= f.text_field :telephone %>
+    </div>
+
+    <div class="field">
+      <%= f.label :password %>
+      <%= f.password_field :password, autocomplete: "off", require: true %>
+    </div>
+
+    <div class="field">
+      <%= f.label :confirmation %>
+      <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    </div>
+
+    <% if @role == "true" %>
+       <%= f.hidden_field :role, value: true %>
+     <% elsif @role == "false" %>
+       <%= f.hidden_field :role, value: false %>
+     <% else %>
+     <div class="role-container">
+       <div class="field role">
+         <%= f.label :role %><br />
+         <%= f.collection_radio_buttons :role, [[true, 'Chef de cuisine'] ,[false, 'Etudiant']], :first, :last, :class => "role-buttons"%>
+       </div>
+     </div>
+     <% end %>
+
+  <% end %>
+
+      <%= render "devise/shared/links" %>
+
+      <div class="actions">
+        <%= f.submit "Valider", :class => "submit-connect" %>
+      </div>
+    <% end %>
+    </div>
+
+</div>
+</section>

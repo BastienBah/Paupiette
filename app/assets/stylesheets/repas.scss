@@ -1,0 +1,111 @@
+// Place all the styles related to the repas controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.field{
+  text-align: left!important;
+}
+
+input[type=text]{
+  transition: .3s all;
+  padding: 5px 20px;
+}
+
+input[type=submit]{
+  cursor: pointer;
+}
+
+.back-return{
+  height: 20px;
+  margin-top: 20px;
+}
+
+.back-return img{
+  height: 40px;
+  margin-top: 20px;
+}
+
+select
+{
+  border-radius: 0!important;
+  -webkit-appearance: none!important;
+  appearance: none;
+  padding: 5px;
+  background-size: 19px!important;
+  background-repeat: no-repeat!important;
+  background-position: 95% 56%!important;
+  outline: none!important;
+}
+
+select:focus{
+  outline: none!important;
+}
+
+input:disabled{
+  background:#A0A0A0;
+}
+
+.repas-new .field{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.date label{
+  width: 100%;
+}
+
+select::after{
+  content: 'V';
+}
+
+.date select{
+  padding-right: 25px;
+  font-size: 12px;
+  background-size: 14px!important;
+}
+
+.pop-up {
+  display: none;
+  position:fixed;
+  margin:0;
+  padding:0;
+  top:0;
+  left:0;
+  width:100vw;
+  height:100vh;
+  background-color: rgba(black,0.4);
+  z-index: 9998;
+}
+
+.pop-up-container {
+  position: relative;
+  margin:20em auto;
+  width:400px;
+  background-color: white;
+  height:120px;
+  z-index: 9999;
+  color:black;
+  text-align: center;
+  padding:2em 1em;
+  a, a:hover {
+    width:fit-content;
+    height:1em;
+    padding:4px 7px;
+    color:white;
+    text-decoration: none;
+  }
+}
+
+.resbutton {
+  cursor: pointer;
+}
+
+.parbutton {
+  text-align: center;
+  p {
+    margin: 0;
+  }
+}

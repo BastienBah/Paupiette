@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Titre:</strong>
+  <%= @repa.titre %>
+</p>
+
+<p>
+<strong>Chez</strong>
+  <%= @repa.user_id %>
+</p>
+
+<p>Celui-ci sera composé de :
+  <%= @repa.menu %>
+</p>
+
+<p>
+  le <%= @repa.date %>
+</p>
+
+<p>
+<strong></strong>
+  <%= @repa.user_id %>
+</p>
+
+
+
+<%= link_to 'Destroy', @repa, method: :delete, data: { confirm: 'Êtes-vous sûr ?' } %>
+<%= link_to 'Edit', edit_repa_path(@repa) %> |
+<%= link_to 'Back', repas_path %>

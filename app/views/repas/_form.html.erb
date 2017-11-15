@@ -1,0 +1,32 @@
+<%= form_for(repa) do |f| %>
+  <% if repa.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(repa.errors.count, "error") %> prohibited this repa from being saved:</h2>
+
+      <ul>
+      <% repa.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :titre %>
+    <%= f.text_field :titre %>
+  </div>
+
+  <div class="field">
+    <%= f.label :composition %>
+    <%= f.text_area :menu %>
+  </div>
+
+  <div class="field">
+    <%= f.label :date %>
+    <%= f.datetime_select :date %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
