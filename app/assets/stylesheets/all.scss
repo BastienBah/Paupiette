@@ -530,6 +530,18 @@ margin-left: 0px;
   width: 50%;
 }
 
+.edit-user-container .actions{
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  width: 100%;
+}
+
+.edit-user-container .actions input{
+    transform: translateX(30px) translateY(30px);
+    margin-top: 0;
+}
+
 .onglet-right .col-lg-4{
   display: flex;
   justify-content: space-between!important;

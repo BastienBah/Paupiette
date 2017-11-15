@@ -138,6 +138,17 @@
     <%= f.label :Confirmez_le_mot_de_passe %>
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
+  <div class="line">
+
+  </div>
+  <div class="actual_pass field">
+    <%= f.label :Mot_de_passe_actuel %>
+    <%= f.password_field :current_password, hint: "We need your current password to confirm your changes.", required: true %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Valider", :class => "submit-connect" %>
+  </div>
 </div>
 </div>
 <% end %>
@@ -147,18 +158,9 @@
   <p><%= current_user.prenom %> <%= current_user.nom %></p>
 </div>
 </div>
-</div>
-    <div class="actual_pass">
-      <%= f.label :Mot_de_passe_actuel %>
-      <%= f.password_field :current_password, hint: "We need your current password to confirm your changes.", required: true %>
-    </div>
 
 
     <%= render "devise/shared/links" %>
-
-    <div class="actions">
-      <%= f.submit "Valider", :class => "submit-connect" %>
-    </div>
   <% end %>
 </div>
 
