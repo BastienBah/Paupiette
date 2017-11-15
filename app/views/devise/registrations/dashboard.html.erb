@@ -1,10 +1,14 @@
 <div class="container dashboard">
   <p>Bienvenue sur votre espace <%= current_user.prenom %></p>
   <div class="row">
-  <div class="col-lg-3">
+  <div class="col-lg-3 flex-center flex-columns">
+    <div class="avatar" style="background: url('<%= current_user.image.url %>')">
 
+    </div>
+    <p><%= current_user.nom %> <%= current_user.prenom %></p>
+    <%= link_to 'Modifier mes informations', edit_user_registration_path, :class => 'font-black modify-button' %>
   </div>
-  <div class="col-lg-9 bkg-light-grey">
+  <div class="col-lg-9 bkg-light-grey horiz-center">
     <h3>Vos repas</h3>
     <div class="container index-repas">
       <% if @repas.length != 0 %>
@@ -42,10 +46,20 @@
           </div>
       <% end %>
       <% else %>
-        <p>Vous n'avez pas encore de repas</p>
+        <p class="m-b-5">Vous n'avez pas encore de repas</p>
       <% end %>
-      <%= link_to 'Modifier mes informations', edit_user_registration_path %>
     </div>
   </div>
 </div>
+</div>
+<div class="container bkg-light-grey m-t-10">
+  <% if @messages.length != 0 %>
+    <% @messages.each do |message| %>
+      <p><%= User.find(message.sender_id).prenom %> <%= User.find(message.sender_id).nom %></p>
+      <p><%= message.message %></p>
+    <% end %>
+    <%else%>
+    <p>vous n'avez reçu aucun message</p>
+  <% end %>
+  <%= link_to "Nouveau message" , , :class => "btn-paupiette"%>
 </div>

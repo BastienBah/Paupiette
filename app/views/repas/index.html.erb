@@ -67,7 +67,7 @@
             </div>
           <% end %>
         <% end %>
-        <% if compteur == 0 %>
+        <% if compteur == 0 && get_selected_city != nil%>
         <%=  "Il n'y a pas de repas pour " + get_selected_city %>
         <% end %>
       <% end %>

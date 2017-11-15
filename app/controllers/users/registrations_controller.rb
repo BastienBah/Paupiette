@@ -19,6 +19,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def dashboard
     @repas = Repa.where(user: current_user)
+    @messages = Message.where(dest_id: current_user.id)
   end
 
   # PUT /resource

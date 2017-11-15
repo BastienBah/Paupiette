@@ -11,6 +11,21 @@
   vertical-align: middle;
 }
 
+.horiz-center{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.modify-button{
+  padding: 5px;
+}
+
+.modify-button:hover{
+  background: #000000;
+  color: #FFFFFF!important;
+}
+
 .fleche1{
   margin-left: 50%;
   height: 50px;
