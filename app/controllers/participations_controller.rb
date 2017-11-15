@@ -10,7 +10,7 @@ class ParticipationsController < ActionController::Base
 
     respond_to do |format|
       if @participation.save!
-        format.html { redirect_to repas_path, notice: 'Participation was successfully created.' }
+        format.html { redirect_to repas_path, notice: 'Merci ! Votre candidature a été bien été envoyé' }
         format.json { redirect_to repas_path, status: :created, location: repas_path }
       else
         format.html { redirect_to repas_path }

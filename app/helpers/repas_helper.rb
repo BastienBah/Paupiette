@@ -25,4 +25,12 @@ module RepasHelper
       end
     return @result
   end
+
+  def available_places(repa)
+    @allowed = repa.places
+    @taken = repa.participations.count
+
+    @result = (@allowed.to_i - @taken.to_i)
+    return @result
+  end
 end

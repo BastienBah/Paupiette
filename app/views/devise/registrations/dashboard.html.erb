@@ -24,6 +24,11 @@
               </div>
               <div class="col-lg-3 p-15 font-dark-grey">
                 <p>à <%= repa.user.ville %> le <%= repa.date.strftime("%d/%m/%y") %></p>
+                <br>
+                <% @allowed = repa.places %>
+                <% @taken = repa.participations.count %>
+                <%  @result = (@allowed.to_i - @taken.to_i) %>
+                <p> Il reste <%= @result %> places sur <%= @allowed %>.</p>
               </div>
               <div class="col-lg-2 flex-center">
                 <span class="price"><%= repa.prix %>€</span>

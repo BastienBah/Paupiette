@@ -27,7 +27,7 @@
       </div>
       <div class="field">
         <%= f.label :Nombre_de_places %>
-        <%= f.number_field :places %>
+        <%= f.number_field :places, required: true  %>
       </div>
 
       <div class="field">
@@ -37,7 +37,7 @@
 
       <div class="field date">
         <%= f.label :date %>
-        <%= f.datetime_select :date %>
+        <%= f.datetime_select :date%>
       </div>
 </div>
 
