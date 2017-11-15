@@ -123,7 +123,11 @@
           <li id="deroul" class="menu-li deroul closed"><%= current_user.prenom %> <span class="glyphicon glyphicon-user" aria-hidden="true"></span></li>
           <ul id="deroul-menu" class="deroul-menu closed">
             <li><%= link_to 'Mon compte', edit_user_registration_path(current_user) %></li>
-            <li><%= link_to 'Dashboard', dashboard_path %></li>
+            <% if current_user.admin == true %>
+              <li><%= link_to 'Admin dashboard', participation_path %></li>
+            <% else %>
+              <li><%= link_to 'Dashboard', dashboard_path %></li>
+            <% end %>
             <li><%= link_to "Me déconnecter", destroy_user_session_path, method: :delete %></li>
           </ul>
       <% else %>

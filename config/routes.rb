@@ -5,6 +5,8 @@ Rails.application.routes.draw do
     resources :participations, only: [:show,:create,:delete]
   end
 
+  get "/participation" => "home#participation"
+
   devise_for :users, :controllers => {:registrations => "users/registrations"}
 
   devise_scope :user do
