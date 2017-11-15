@@ -9,34 +9,12 @@ when "3"
 when "4"
   formule = "Entrée + Plat + Dessert"
 end %>
-<p>
-  <strong>Titre:</strong>
-  <%= @repa.titre %>
-</p>
-
-<p>
-<strong>Chez</strong>
-  <%= @repa.user_id %>
-</p>
-
-<p>Celui-ci sera composé de :
-  <%= @repa.menu %>
-</p>
-
-<p>
-  le <%= @repa.date %>
-</p>
-
-<p>
-<strong></strong>
-  <%= @repa.user_id %>
-</p>
 
 <div class="container">
   <div class="row">
   <div class="col-lg-7 bkg-light-grey">
     <div class="row">
-    <div class="col-lg-3 bkg-dark-grey" style="background: url('<%= @repa.image.url %>')">
+    <div class="col-lg-3 bkg-dark-grey image-repas-show" style="background: url('<%= @repa.image.url %>')">
 
     </div>
     <div class="col-lg-9">
