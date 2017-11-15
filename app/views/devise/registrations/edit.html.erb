@@ -1,7 +1,6 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-3">
-      <%= current_user.email %>
     </div>
     <div class="col-lg-9">
 
@@ -29,7 +28,10 @@
       <option value="4">?</option>
     </select>
   </div>
-
+  <div class="field">
+    <%= f.label :mettez_un_beau_selfie %>
+    <%= f.file_field :image, value: current_user.image %>
+  </div>
   <div class="field">
     <%= f.label :nom %>
     <%= f.text_field :nom, value: current_user.nom %>
@@ -88,7 +90,6 @@
 </div>
 </div>
 </div>
-</div>
 <% else %>
 <div class="">
   <div class="field">
@@ -131,7 +132,13 @@
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 <% end %>
+<div class="col-lg-4 avatar-container">
+  <div class="avatar" style="background: url('<%= current_user.image.url %>')">
 
+  </div>
+  <p><%= current_user.prenom %> <%= current_user.nom %></p>
+</div>
+</div>
     <div class="actual_pass">
       <%= f.label :Mot_de_passe_actuel %>
       <%= f.password_field :current_password, hint: "We need your current password to confirm your changes.", required: true %>
@@ -145,6 +152,7 @@
     </div>
   <% end %>
 </div>
+
   </div>
 
 <h3>Cancel my account</h3>

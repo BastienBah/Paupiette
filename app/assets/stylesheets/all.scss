@@ -505,10 +505,25 @@ margin-left: 0px;
   background:#b53434!important;
 }
 
+.avatar{
+  height: 200px;
+  width: 200px;
+  border-radius: 100%;
+  background-size: cover!important;
+  background-position: center!important;
+}
+
 .edit-user-container .field{
   width: 100%;
   display: flex;
   justify-content: space-between;
+}
+
+.avatar-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .edit-user-container .field input, .edit-user-container .field select{
