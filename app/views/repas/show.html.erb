@@ -28,8 +28,12 @@ end %>
     </div>
   </div>
   </div>
-  <div class="col-lg-5">
+  <div class="col-lg-5 vertical-center flex-columns">
+    <p>Ce repas se passe chez:</p>
+    <div class="avatar" style="background: url(<%= @user.image.url %>)">
 
+    </div>
+    <p><%= @user.prenom %> <%= @user.nom %></p>
   </div>
 </div>
 </div>

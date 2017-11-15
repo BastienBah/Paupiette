@@ -11,6 +11,7 @@ class RepasController < ApplicationController
   # GET /repas/1
   # GET /repas/1.json
   def show
+    @user = User.find(@repa.user_id)
   end
 
   # GET /repas/new
