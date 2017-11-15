@@ -1,68 +1,65 @@
 <section class="index-repas">
 
-  <!-- <h3 class="playlist">Ici, tu t'inscriras à tous les repas</h3> -->
-
-  <ul>
-    <% @result = select_all_city %>
-    <% @result.each do |city| %>
-    <li class="city-item" style="cursor:pointer;"> <%= city %></li>
-    <% end %>
-  </ul>
-
-  <!-- <div class="container">
-  <%= image_tag "mockup.jpg", :class => "coming-soon" %>
-</div> -->
 
   <% if user_signed_in? %>
-  <div class="container no-padding">
-    <div class="titre-repas">
-      <h1>Annonces de repas</h1>
-    </div>
-  </div>
-
-  <div class="container">
-    <% @repas.each do |repa| %>
-      <% if repa.user.ville == get_selected_city %>
-        <div class="row repas">
-          <div class="col-lg-12 bkg-light-grey no-padding flex">
-            <div class="col-lg-2 bkg-med-grey img-repas">
-            </div>
-            <div class="col-lg-3 p-15">
-                  <h2><%= repa.titre %></h2>
-                  <p class="sous-titre">chez <%= repa.user.prenom %></p>
-                  <p class="font-dark-grey no-margin-b"><%= repa.menu %><p>
-                  <%= link_to 'voir plus...', repa, :class => 'repas-show' %>
-                  <% if current_user.id == repa.id %>
-                    <%= link_to 'Edit', edit_repa_path(repa) %>
-                  <% end %>
-            </div>
-            <div class="col-lg-3 p-15 font-dark-grey">
-              <p>à <%= repa.user.ville %> le <%= repa.date.strftime("%d/%m/%y") %></p>
-            </div>
-            <div class="col-lg-2 flex-center">
-              <span class="price">7€</span>
-            </div>
-
-            <% if !Participation.where(user_id: current_user.id, repa_id: repa.id).empty? %>
-              <div class="col-lg-2 bkg-violet flex-center font-white parbutton">
-                <p> Je participe déjà.</p>
-              </div>
-            <% else %>
-              <div class="col-lg-2 bkg-violet flex-center font-white resbutton">
-                <%= link_to repa_participations_path(repa.id), method: :post, class:"flex-center" do %>
-                  <p> Réserver </p>
-                <% end %>
-              </div>
-            <% end %>
-            
-          </div>
-        </div>
+    <div class="container no-padding">
+      <div class="titre-repas">
+        <h1>Annonces de repas</h1>
       </div>
     </div>
-    <% end %>
-    <% end %>
 
-  </div>
+    <div class="container">
+      <ul>
+        <% @result = select_all_city %>
+        <% @result.each do |city| %>
+        <li class="city-item" style="cursor:pointer;"> <%= city %></li>
+        <% end %>
+      </ul>
+
+      <% @repas.each do |repa| %>
+        <% if repa.user.ville == get_selected_city %>
+          <div class="row repas">
+            <div class="col-lg-12 bkg-light-grey no-padding flex">
+              <div class="col-lg-2 bkg-med-grey img-repas">
+              </div>
+              <div class="col-lg-3 p-15">
+                    <h2><%= repa.titre %></h2>
+                    <p class="sous-titre">chez <%= repa.user.prenom %></p>
+                    <p class="font-dark-grey no-margin-b"><%= repa.menu %><p>
+                    <%= link_to 'voir plus...', repa, :class => 'repas-show' %>
+                    <% if current_user.id == repa.id %>
+                      <%= link_to 'Edit', edit_repa_path(repa) %>
+                    <% end %>
+              </div>
+              <div class="col-lg-3 p-15 font-dark-grey">
+                <p>à <%= repa.user.ville %> le <%= repa.date.strftime("%d/%m/%y") %></p>
+              </div>
+              <div class="col-lg-2 flex-center">
+                <span class="price">7€</span>
+              </div>
+
+              <% if !Participation.where(user_id: current_user.id, repa_id: repa.id).empty? %>
+                <div class="col-lg-2 bkg-violet flex-center font-white parbutton">
+                  <p> Je participe déjà.</p>
+                </div>
+              <% else %>
+                <div class="col-lg-2 bkg-violet flex-center font-white resbutton">
+                  <%= link_to repa_participations_path(repa.id), method: :post, class:"flex-center" do %>
+                    <p> Réserver </p>
+                  <% end %>
+                </div>
+              <% end %>
+
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  <% else %>
+    <h3 class="playlist">Ici, tu t'inscriras à tous les repas</h3>
+    <div class="container">
+      <%= image_tag "mockup.jpg", :class => "coming-soon" %>
+    </div>
   <% end %>
 </section>
 
