@@ -27,11 +27,17 @@
               <div class="col-lg-2 flex-center">
                 <span class="price">7€</span>
               </div>
-              <div class="col-lg-2 bkg-violet flex-center font-white resbutton">
-                <a href= "/repas" class="flex-center">
-                  <p>Réserver</p>
-                </a>
-              </div>
+              <% if !Participation.where(user_id: current_user.id, repa_id: repa.id).empty? %>
+                <div class="col-lg-2 bkg-violet flex-center font-white parbutton">
+                  <p> Je participe déjà.</p>
+                </div>
+              <% else %>
+                <div class="col-lg-2 bkg-violet flex-center font-white resbutton">
+                  <%= link_to repa_participations_path(repa.id), method: :post, class:"flex-center" do %>
+                    <p> Réserver </p>
+                  <% end %>
+                </div>
+              <% end %>
             </div>
           </div>
       <% end %>
