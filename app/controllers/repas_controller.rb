@@ -27,6 +27,20 @@ class RepasController < ApplicationController
   def create
     @repa = Repa.new(repa_params)
     @repa.user = current_user
+    case @repa.menu
+    when "1"
+      @repa.menu = "Plat seulement"
+      @repa.prix = 3
+    when "2"
+      @repa.menu = "Entrée + Plat"
+      @repa.prix = 5
+    when "3"
+      @repa.menu = "Plat + Dessert"
+      @repa.prix = 5
+    when "4"
+      @repa.menu = "Entrée + Plat + Dessert"
+      @repa.prix = 7
+    end
 
     #Validation prix repas
 
@@ -60,7 +74,7 @@ class RepasController < ApplicationController
   def destroy
     @repa.destroy
     respond_to do |format|
-      format.html { redirect_to repas_url, notice: 'Repa was successfully destroyed.' }
+      format.html { redirect_to dashboard_path, notice: 'Repa was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -73,6 +87,6 @@ class RepasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def repa_params
-      params.require(:repa).permit(:titre, :descritpion, :date, :prix, :entree, :plat, :dessert)
+      params.require(:repa).permit(:titre, :descritpion, :date, :prix, :menu ,:entree, :places ,:plat, :dessert)
     end
 end

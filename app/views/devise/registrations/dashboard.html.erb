@@ -26,17 +26,11 @@
                 <p>à <%= repa.user.ville %> le <%= repa.date.strftime("%d/%m/%y") %></p>
               </div>
               <div class="col-lg-2 flex-center">
-                <span class="price">7€</span>
+                <span class="price"><%= repa.prix %>€</span>
               </div>
-              <% if !Participation.where(user_id: current_user.id, repa_id: repa.id).empty? %>
-                <div class="col-lg-2 bkg-violet flex-center font-white parbutton">
-                  <p> Je participe déjà.</p>
-                </div>
-              <% else %>
-                <div class="col-lg-2 bkg-violet flex-center font-white resbutton">
-                  <%= link_to repa_participations_path(repa.id), method: :post, class:"flex-center" do %>
-                    <p> Réserver </p>
-                  <% end %>
+                <div class="col-lg-2 bkg-violet flex-center font-white resbutton delbutton">
+                  <%= link_to repa_path(repa), method: :delete, class:"flex-center" do %>
+                    <p> Supprimer </p>
                 </div>
               <% end %>
             </div>

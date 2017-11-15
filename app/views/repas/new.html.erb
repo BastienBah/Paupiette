@@ -24,6 +24,11 @@
       <% end %>
 
       <div class="field">
+        <%= f.label :Nombre_de_places %>
+        <%= f.number_field :places %>
+      </div>
+
+      <div class="field">
         <%= f.label :titre %>
         <%= f.text_field :titre, :placeholder => "ex: Paëla Royale" %>
       </div>
@@ -37,8 +42,8 @@
 <div class="col-lg-6 vertical-center flex-columns">
       <div class="field">
         <%= f.label :menu %>
-        <select id="selector-meal" class="" name="composition">
-          <option value="1">Plat</option>
+        <select id="selector-meal" class="" name="repa[menu]" id="repa_menu">
+          <option value="1" selected>Plat</option>
           <option value="2">Entrée / Plat</option>
           <option value="3">Plat / Dessert</option>
           <option value="4">Entrée / Plat / Dessert</option>
@@ -47,7 +52,7 @@
 
       <div id="" class="field">
         <%= f.label :entree %>
-        <%= f.text_field :entree, :id => "entree", :placeholder => "Description" %>
+        <%= f.text_field :entree, :id => "entree", :placeholder => "Description", :disabled => true %>
       </div>
 
       <div id="" class="field">
@@ -57,7 +62,7 @@
 
       <div id="" class="field">
         <%= f.label :dessert %>
-        <%= f.text_field :dessert, :id => "dessert", :placeholder => "Description" %>
+        <%= f.text_field :dessert, :id => "dessert", :placeholder => "Description", :disabled => true %>
       </div>
 
 </div>

@@ -23,7 +23,7 @@ function toggleBurger(x){
 
 var popup = document.querySelector('.pop-up');
 var close = document.querySelector('.close-button');
-var reservation = document.querySelector('.resbutton');
+var reservation = document.querySelector('.popupres');
 
 reservation.addEventListener("click",function(){
   popup.style.display = "block";

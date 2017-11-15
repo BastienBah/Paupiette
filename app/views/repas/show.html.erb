@@ -1,5 +1,14 @@
 <p id="notice"><%= notice %></p>
-
+<% case @repa.menu
+when "1"
+  formule = "Plat seulement"
+when "2"
+  formule = "Entrée + Plat"
+when "3"
+  formule = "Plat + Dessert"
+when "4"
+  formule = "Entrée + Plat + Dessert"
+end %>
 <p>
   <strong>Titre:</strong>
   <%= @repa.titre %>
@@ -23,6 +32,29 @@
   <%= @repa.user_id %>
 </p>
 
+<div class="container">
+  <div class="row">
+  <div class="col-lg-7 bkg-light-grey">
+    <div class="row">
+    <div class="col-lg-3 bkg-dark-grey">
+
+    </div>
+    <div class="col-lg-9">
+      <p>Prix: <%= @repa.prix %>€</p>
+      <p>Date: <%= @repa.date.strftime("%d/%m/%y") %></p>
+      <p>Repas composé de : <%= @repa.menu %> </p>
+      <p>Entrée : <%= @repa.entree %> </p>
+      <p>Plat : <%= @repa.plat %> </p>
+      <p>Dessert : <%= @repa.dessert %> </p>
+
+    </div>
+  </div>
+  </div>
+  <div class="col-lg-5">
+
+  </div>
+</div>
+</div>
 
 
 <%= link_to 'Destroy', @repa, method: :delete, data: { confirm: 'Êtes-vous sûr ?' } %>
