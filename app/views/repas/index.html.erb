@@ -43,7 +43,7 @@
               <span class="price">7€</span>
             </div>
 
-            <% if Participation.where(user_id: current_user.id, repa_id: repa.id) %>
+            <% if !Participation.where(user_id: current_user.id, repa_id: repa.id).empty? %>
               <div class="col-lg-2 bkg-violet flex-center font-white parbutton">
                 <p> Je participe déjà.</p>
               </div>
@@ -55,11 +55,6 @@
               </div>
             <% end %>
           </div>
-        </div>
-        <div class="col-lg-2 bkg-violet flex-center font-white resbutton">
-          <%= link_to root_path, class: "flex-center" do %>
-          <p>Réserver</p>
-          <% end %>
         </div>
       </div>
     </div>
