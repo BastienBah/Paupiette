@@ -19,8 +19,13 @@ class ParticipationsController < ActionController::Base
     end
   end
 
-  def delete
-
+  def destroy
+    @participation = Participation.find(params[:id])
+    @participation.destroy
+    respond_to do |format|
+      format.html { redirect_to root_path, notice: 'La participation a bien été supprimé, envoyez un message pour prévenir.' }
+      format.json { head :no_content }
+    end
   end
 
 end

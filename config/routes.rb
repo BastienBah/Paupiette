@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
   resources :repas do
-    resources :participations, only: [:show,:create,:delete]
+    resources :participations, only: [:show,:create,:destroy]
   end
 
   get "/participation" => "home#participation"

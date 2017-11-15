@@ -219,3 +219,19 @@ div.content{
 body{
   font-family: 'Lato', sans-serif;
 }
+
+.part-list {
+  margin: 3em 0;
+  padding:2em 1em;
+  h2 {
+    margin: 0 auto 1em;
+  }
+  li {
+    margin:0.5em auto;
+    a {
+      color:white;
+      margin-left: 2em;
+      padding:0.5em 1em;
+    }
+  }
+}
