@@ -22,7 +22,9 @@
           </ul>
         </div>
       <% end %>
-
+      <div class="field">
+        <%= f.file_field :image %>
+      </div>
       <div class="field">
         <%= f.label :Nombre_de_places %>
         <%= f.number_field :places %>

@@ -87,6 +87,6 @@ class RepasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def repa_params
-      params.require(:repa).permit(:titre, :descritpion, :date, :prix, :menu ,:entree, :places ,:plat, :dessert)
+      params.require(:repa).permit(:titre, :descritpion, :date, :prix, :menu ,:entree, :places ,:plat, :dessert,:image)
     end
 end
