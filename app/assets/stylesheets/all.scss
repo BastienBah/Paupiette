@@ -510,3 +510,8 @@ margin-left: 0px;
 .edit-user-container .field input, .edit-user-container .field select{
   width: 50%;
 }
+
+.onglet-right .col-lg-4{
+  display: flex;
+  justify-content: space-between!important;
+}

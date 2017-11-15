@@ -106,7 +106,7 @@
         <% end %>
           <% if user_signed_in? %>
             <% if current_user.role == true %>
-              <% if current_user.rue == nil && current_user.numero_rue == nil && current_user.code_postal == nil %>
+              <% if current_user.rue == nil || current_user.numero_rue == nil || current_user.code_postal == nil %>
                 <li class="btn-paupiette"><%= link_to 'Nouveau repas', edit_user_registration_path %></li>
               <% else %>
                 <li class="btn-paupiette"><%= link_to 'Nouveau repas', new_repa_path %></li>
@@ -123,10 +123,10 @@
       <% else %>
       <% if 0 == 1 %>
           <li class=""><%= link_to 'Connexion', new_user_session_path%></li>
-          <li class=""><%= link_to "Inscription", new_user_registration_path, :class => "purple-button"%></li>
+          <li class=""><%= link_to "Inscription", new_user_registration_path, :class => "btn-paupiette"%></li>
           <% end %>
           <li><a href="<%= new_user_session_path %>">Connectez-vous</a></li>
-          <li><a href="<%= new_user_registration_path %>">Créer un compte</a></li>
+          <li><a href="<%= new_user_registration_path %>" class="purple-button">Créer un compte</a></li>
         <% end %>
         </ul>
       </div>
