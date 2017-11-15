@@ -32,3 +32,7 @@ reservation.addEventListener("click",function(){
 close.addEventListener("click",function(){
   popup.style.display = "none";
 });
+
+function popupInfos(){
+  document.getElementById('popupInfos').style.display = "block";
+}

@@ -47,6 +47,12 @@
   <%= stylesheet_link_tag    'repas', media: 'all', 'data-turbolinks-track': 'reload' %>
 </head>
 <body id="body" class="menu-burger-closed">
+  <div id="popupInfos" class="pop-up">
+  <div class="pop-up-container">
+    <p>Veulliez compléter votre profil avant d'ajouter votre repas</p>
+    <%= link_to 'compléter', edit_user_registration_path, :class => 'btn-paupiette m-b-10' %>
+  </div>
+</div>
   <header id="header">
 
     <nav class="mobile-menu">
@@ -106,8 +112,8 @@
         <% end %>
           <% if user_signed_in? %>
             <% if current_user.role == true %>
-              <% if current_user.rue == nil || current_user.numero_rue == nil || current_user.code_postal == nil %>
-                <li class="btn-paupiette"><%= link_to 'Nouveau repas', edit_user_registration_path %></li>
+              <% if current_user.rue == nil || current_user.rue == '' || current_user.numero_rue == nil || current_user.code_postal == nil %>
+                <li class="btn-paupiette" onclick="popupInfos()">Nouveau repas</li>
               <% else %>
                 <li class="btn-paupiette"><%= link_to 'Nouveau repas', new_repa_path %></li>
               <% end %>
