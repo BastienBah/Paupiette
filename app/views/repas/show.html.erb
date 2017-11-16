@@ -20,7 +20,6 @@ end %>
       <p>Prix: <%= @repa.prix %>€</p>
       <p>Date: <%= @repa.date.strftime("%d/%m/%y") %></p>
       <p>Repas composé de : <%= @repa.menu %> </p>
-
       <% if @repa.menu == "Plat seulement" %>
         <p>Plat : <%= @repa.plat %> </p>
       <% elsif @repa.menu == "Entrée + Plat" %>
@@ -39,9 +38,11 @@ end %>
   </div>
   <div class="col-lg-5 vertical-center flex-columns">
     <p>Ce repas se passe chez:</p>
-    <div class="avatar" style="background: url(<%= @user.image.url %>)">
-
-    </div>
+    <% if @user.image.url == !nil %>
+      <div class="avatar" style="background: url(<%= @user.image.url %>)"></div>
+    <% else %>
+      <div class="avatar" style="background:url('<%= image_url('avatar.svg') %>')"></div>
+    <% end %>
     <p><%= @user.prenom %> <%= @user.nom %></p>
   </div>
 </div>
