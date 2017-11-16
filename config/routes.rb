@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   devise_scope :user do
     get "/dashboard" => "users/registrations#dashboard"
+    resources :messages, only: [:show, :create, :destroy]
   end
 
   root "home#index"

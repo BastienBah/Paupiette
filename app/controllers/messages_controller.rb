@@ -13,7 +13,7 @@ class MessagesController < ActionController::Base
 
     respond_to do |format|
       if @message.save
-        format.html { redirect_to root_path, notice: 'Repa was successfully created.' }
+        format.html { redirect_to root_path, notice: 'Message was successfully sended.' }
         format.json { render :show, status: :created, location: root_path }
       else
         format.html { render :new }
