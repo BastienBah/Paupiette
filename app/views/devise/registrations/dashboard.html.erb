@@ -8,7 +8,9 @@
     <p><%= current_user.nom %> <%= current_user.prenom %></p>
     <%= link_to 'Modifier mes informations', edit_user_registration_path, :class => 'font-black modify-button' %>
   </div>
+
   <div class="col-lg-9 bkg-light-grey horiz-center">
+    <% if current_user.role == true %>
     <h3>Vos repas</h3>
     <div class="container index-repas">
       <% if @repas.length != 0 %>
@@ -49,9 +51,48 @@
         <p class="m-b-5">Vous n'avez pas encore de repas</p>
       <% end %>
     </div>
-  </div>
+
+    <% end #fin du if role %>
+    <% if current_user.role == false %>
+      <div class="dashboard container">
+        <% @participations.each do |participation| %>
+          <% repa = Repa.find(participation.repa_id) %>
+          <div class="row repas">
+            <div class="col-lg-12 bkg-light-grey no-padding flex">
+              <div class="col-lg-2 bkg-med-grey img-repas" style="background: url('<%= repa.image.url %>')">
+              </div>
+              <div class="col-lg-3 p-15">
+                    <h2><%= repa.titre %></h2>
+                    <p class="sous-titre">chez <%= repa.user.prenom %></p>
+                    <p class="font-dark-grey no-margin-b"><%= repa.menu %><p>
+                    <%= link_to 'voir plus...', repa, :class => 'repas-show' %>
+                    <% if current_user.id == repa.id %>
+                      <%= link_to 'Edit', edit_repa_path(repa) %>
+                    <% end %>
+              </div>
+              <div class="col-lg-3 p-15 font-dark-grey">
+                <p>à <%= repa.user.ville %> le <%= repa.date.strftime("%d/%m/%y") %></p>
+                <br>
+                <% @allowed = repa.places %>
+                <% @taken = repa.participations.count %>
+                <%  @result = (@allowed.to_i - @taken.to_i) %>
+                <p> Il reste <%= @result %> places sur <%= @allowed %>.</p>
+              </div>
+              <div class="col-lg-2 flex-center">
+                <span class="price"><%= repa.prix %>€</span>
+              </div>
+                <div class="col-lg-2 bkg-violet flex-center font-white resbutton contactbutton">
+                  <%= link_to new_messages_path(:user_id => repa.user_id), class:"flex-center" do %>
+                    <p> Contacter l'hôte </p>
+                </div>
+                </div>
+                </div>
+        <% end %>
+        <% end %>
+    <% end %>
 </div>
 </div>
+
 <div class="container bkg-light-grey m-t-10">
   <% if @messages.length != 0 %>
     <% @messages.each do |message| %>
