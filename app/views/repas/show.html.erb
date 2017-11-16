@@ -20,10 +20,20 @@ end %>
       <p>Prix: <%= @repa.prix %>€</p>
       <p>Date: <%= @repa.date.strftime("%d/%m/%y") %></p>
       <p>Repas composé de : <%= @repa.menu %> </p>
-      <p>Entrée : <%= @repa.entree %> </p>
-      <p>Plat : <%= @repa.plat %> </p>
-      <p>Dessert : <%= @repa.dessert %> </p>
 
+      <% if @repa.menu == "Plat seulement" %>
+        <p>Plat : <%= @repa.plat %> </p>
+      <% elsif @repa.menu == "Entrée + Plat" %>
+        <p>Entrée : <%= @repa.entree %> </p>
+        <p>Plat : <%= @repa.plat %> </p>
+      <% elsif @repa.menu == "Plat + Dessert" %>
+        <p>Plat : <%= @repa.plat %> </p>
+        <p>Dessert : <%= @repa.dessert %> </p>
+      <% else @repa.menu == "Entrée + Plat + Dessert" %>
+        <p>Entrée : <%= @repa.entree %> </p>
+        <p>Plat : <%= @repa.plat %> </p>
+        <p>Dessert : <%= @repa.dessert %> </p>
+      <% end %>
     </div>
   </div>
   </div>
@@ -46,7 +56,4 @@ end %>
 </ul>
 </div>
 
-
-<%= link_to 'Destroy', @repa, method: :delete, data: { confirm: 'Êtes-vous sûr ?' } %>
-<%= link_to 'Edit', edit_repa_path(@repa) %> |
 <%= link_to 'Back', repas_path %>
