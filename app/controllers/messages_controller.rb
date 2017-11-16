@@ -1,4 +1,4 @@
-class MessagesController < ActionController::Base
+class MessagesController < ApplicationController
 
   def new
     @message = Message.new

@@ -32,7 +32,7 @@ class RepasController < ApplicationController
     case @repa.menu
     when "1"
       @repa.menu = "Plat seulement"
-      @repa.prix = 3
+      @repa.prix = 4
     when "2"
       @repa.menu = "Entrée + Plat"
       @repa.prix = 5
