@@ -48,7 +48,7 @@ class RepasController < ApplicationController
 
     respond_to do |format|
       if @repa.save
-        format.html { redirect_to @repa, notice: 'Repa was successfully created.' }
+        format.html { redirect_to @repa, notice: 'Votre repas a bien été crée' }
         format.json { render :show, status: :created, location: @repa }
       else
         format.html { render :new }
@@ -62,7 +62,7 @@ class RepasController < ApplicationController
   def update
     respond_to do |format|
       if @repa.update(repa_params)
-        format.html { redirect_to @repa, notice: 'Repa was successfully updated.' }
+        format.html { redirect_to @repa, notice: 'Votre repas a bien été mis à jour' }
         format.json { render :show, status: :ok, location: @repa }
       else
         format.html { render :edit }
@@ -76,7 +76,7 @@ class RepasController < ApplicationController
   def destroy
     @repa.destroy
     respond_to do |format|
-      format.html { redirect_to dashboard_path, notice: 'Repa was successfully destroyed.' }
+      format.html { redirect_to dashboard_path, notice: 'Votre repas a bien été supprimé' }
       format.json { head :no_content }
     end
   end
