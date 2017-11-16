@@ -9,6 +9,10 @@
   }
 }
 
+.padding-mission{
+  padding: 40px 0px;
+}
+
 section.home1{
   background: image-url('image_repas.png');
   background-size: cover!important;
@@ -67,8 +71,50 @@ section.home1{
 
 .explication{
   font-size: 25px;
-  padding-top: 50px!important;
-  padding-top: 50px!important;
+}
+
+.list-explication{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.list-explication h4{
+  font-weight: 900;
+  color: #5B1633;
+  font-size: 27px
+}
+
+.list-explication {
+  counter-reset: item;
+}
+.list-explication ol {
+  list-style: none;
+}
+.list-explication li {
+  counter-increment: item;
+  margin-bottom: 5px;
+  list-style: none;
+}
+
+.les-partenaires img{
+  max-height: 100px;
+  width: auto;
+  margin: 20px;
+}
+
+.les-partenaires{
+  display: flex;
+  justify-content: space-between;
+}
+
+.list-explication li h4:before {
+  margin-right: 10px;
+  content: counter(item)".";
+  color: #5B1633;
+  font-size: 27px;
+  text-align: center;
+  display: inline-block;
 }
 
 .flex-columns{
