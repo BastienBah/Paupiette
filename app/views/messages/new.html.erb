@@ -14,7 +14,7 @@
 
 <%= form_for(@message) do |f| %>
   <%= f.hidden_field :dest_id, :value => params[:user_id] %>
-  <%= f.text_field :message %>
+  <%= f.text_area :message %>
 
   <%= f.submit "Envoyer" %>
 <% end %>
