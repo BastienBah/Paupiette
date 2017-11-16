@@ -1,5 +1,5 @@
 <section class="index-repas">
-  <p id='notice' class="bkg-violet"><b><%= notice %></b></p>
+  <p id='notice' class="bkg-violet <%= notice != nil ? "padding-notice" : nil %>"><b><%= notice %></b></p>
 
   <% if user_signed_in? %>
     <div class="container no-padding">

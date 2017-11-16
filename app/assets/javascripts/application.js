@@ -21,18 +21,6 @@ function toggleBurger(x){
   document.getElementById('cheeseburger').classList.toggle('open');
 }
 
-var popup = document.querySelector('.pop-up');
-var close = document.querySelector('.close-button');
-var reservation = document.querySelector('.popupres');
-
-reservation.addEventListener("click",function(){
-  popup.style.display = "block";
-});
-
-close.addEventListener("click",function(){
-  popup.style.display = "none";
-});
-
 function popupInfos(){
   document.getElementById('popupInfos').style.display = "block";
 }

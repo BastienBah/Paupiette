@@ -178,9 +178,14 @@ div.content{
   justify-content: space-around;
 }
 
+.singin > a {
+  margin:0 0.5em;
+}
+
+
 .baseline{
-  padding-top: 55px;
-  padding-bottom: 55px;
+
+  padding:55px 0;
 }
 
 .baseline-secondline, .baseline-firstline{
