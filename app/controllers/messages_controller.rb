@@ -7,7 +7,6 @@ class MessagesController < ActionController::Base
   def create
     @message = Message.new(message_params)
     @message.sender_id = current_user.id
-    #@message.user = User.find(@message.dest_id)
 
     #Validation prix repas
 

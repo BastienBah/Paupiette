@@ -9,30 +9,6 @@ when "3"
 when "4"
   formule = "Entrée + Plat + Dessert"
 end %>
-<p>
-
-  <strong>Titre:</strong>
-  <%= @repa.titre %>
-</p>
-
-<p>
-<strong>Chez</strong>
-  <%= @repa.user_id %>
-</p>
-
-<p>Celui-ci sera composé de :
-  <%= @repa.menu %>
-</p>
-
-<p>
-  le <%= @repa.date %>
-</p>
-
-<p>
-<strong></strong>
-  <%= @repa.user_id %>
-</p>
-
 <div class="container">
   <div class="row">
   <div class="col-lg-7 bkg-light-grey">
@@ -59,6 +35,15 @@ end %>
     <p><%= @user.prenom %> <%= @user.nom %></p>
   </div>
 </div>
+</div>
+<div class="container">
+  <h3>Ils participent à ce repas: </h3>
+  <ul>
+  <% @participations.each do |participation| %>
+    <% user = User.find(participation.user_id) %>
+    <li class="flex m-t-10 align-center"><div class="mini-avatar" style="background: url('<%= user.image.url %>')"></div><%= user.nom %> <%= user.prenom %> <%= link_to "Nouveau message" , new_messages_path(:user_id => user.id) , :class => "btn-paupiette"%></li>
+  <% end %>
+</ul>
 </div>
 
 

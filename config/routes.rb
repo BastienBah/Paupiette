@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   end
 
   get "/participation" => "home#participation"
+  resource :messages
 
   devise_for :users, :controllers => {:registrations => "users/registrations"}
 

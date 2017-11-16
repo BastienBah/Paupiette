@@ -12,6 +12,7 @@ class RepasController < ApplicationController
   # GET /repas/1.json
   def show
     @user = User.find(@repa.user_id)
+    @participations = Participation.where(repa_id: @repa.id)
   end
 
   # GET /repas/new

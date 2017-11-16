@@ -10,10 +10,10 @@
   </div>
 <% end %>
 
+<h1>Envoi d'un message à <%= User.find(params[:user_id]).prenom %> <%= User.find(params[:user_id]).nom %></h1>
+
 <%= form_for(@message) do |f| %>
-
-  <%= f.number_field :dest_id %>
-
+  <%= f.hidden_field :dest_id, :value => params[:user_id] %>
   <%= f.text_field :message %>
 
   <%= f.submit "Envoyer" %>

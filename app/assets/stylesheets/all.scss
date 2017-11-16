@@ -558,6 +558,10 @@ margin-left: 0px;
 
 }
 
+.align-center{
+  align-items: center;
+}
+
 .delbutton{
   background:#b53434!important;
 }
@@ -568,6 +572,19 @@ margin-left: 0px;
   border-radius: 100%;
   background-size: cover!important;
   background-position: center!important;
+}
+
+.mini-avatar{
+  margin: 5px;
+  height: 50px;
+  width: 50px;
+  border-radius: 100%;
+  background-size: cover!important;
+  background-position: center!important;
+}
+
+.flex{
+  display: flex;
 }
 
 .edit-user-container .field{
