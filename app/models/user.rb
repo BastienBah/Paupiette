@@ -10,7 +10,7 @@ class User < ApplicationRecord
      thumb: '100x100>',
      square: '200x200#',
      medium: '300x300>'
-   }, :default_url => "assets/original/missing.png"
+   }, :default_url => "/assets/original/missing.png"
 
    validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
 
