@@ -1,6 +1,15 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :user_name => '73daf315c61796',
+    :password => 'c122df7cc956d0',
+    :address => 'smtp.mailtrap.io',
+    :domain => 'smtp.mailtrap.io',
+    :port => '2525',
+    :authentication => :cram_md5
+  }
   # Code is not reloaded between requests.
   config.cache_classes = true
 
@@ -57,7 +66,7 @@ Rails.application.configure do
   # config.active_job.queue_name_prefix = "Paupiette_#{Rails.env}"
   config.action_mailer.perform_caching = false
 
-  config.action_mailer.default_url_options = { :host => 'www.paupiette.co' }
+  # config.action_mailer.default_url_options = { :host => 'www.paupiette.co' }
 
 
   # Ignore bad email addresses and do not raise email delivery errors.
