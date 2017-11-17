@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   devise_for :users, :controllers => {:registrations => "users/registrations"}
 
+  default_url_options :host => "www.paupiette.co"
 
   devise_scope :user do
     get "/dashboard" => "users/registrations#dashboard"
