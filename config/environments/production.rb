@@ -10,6 +10,8 @@ Rails.application.configure do
     :port => '2525',
     :authentication => :cram_md5
   }
+
+  config.action_mailer.default_url_options = { :host => 'smtp.mailtrap.io' }
   # Code is not reloaded between requests.
   config.cache_classes = true
 
