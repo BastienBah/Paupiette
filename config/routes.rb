@@ -6,9 +6,11 @@ Rails.application.routes.draw do
   end
 
   get "/participation" => "home#participation"
+
   resource :messages
 
   devise_for :users, :controllers => {:registrations => "users/registrations"}
+
 
   devise_scope :user do
     get "/dashboard" => "users/registrations#dashboard"
