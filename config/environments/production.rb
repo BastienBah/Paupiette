@@ -1,6 +1,14 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+  require 'rubygems' if RUBY_VERSION < '1.9'
+  require 'rest_client'
+  require 'json'
+
+  response = RestClient::Resource.new("https://mailtrap.io/api/v1/inboxes.json?api_token=#{ENV['MAILTRAP_API_TOKEN']}", ssl_version: "TLSv1").get
+
+  first_inbox = JSON.parse(response)[0]
+
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     :user_name => '73daf315c61796',
@@ -11,7 +19,7 @@ Rails.application.configure do
     :authentication => :cram_md5
   }
 
-  config.action_mailer.default_url_options = { :host => 'www.paupiette.co' }
+  config.action_mailer.default_url_options = { :host => 'www.paupiette' }
   # Code is not reloaded between requests.
   config.cache_classes = true
 
