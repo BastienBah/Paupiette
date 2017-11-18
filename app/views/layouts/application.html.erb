@@ -68,7 +68,7 @@
       <% end %>
       <div class="w14">
       <div class="responsive-right">
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfnwnMns_cNQKeezjzcnNiRJynd7HoaCYdl-hjDSrZ_6WUhvw/viewform?c=0&w=1" class="letter-2 purple-button">Contactez-nous</a>
+        <%= link_to 'Inscription', new_user_registration_path, :class => "letter-2 purple-button" %>
       </div>
     </div>
     </nav>
@@ -76,6 +76,11 @@
       <ul>
         <li class=""><a href="<%= root_path %>">ACCUEIL</a></li>
         <li class=""><a href="<%= repas_path %>">ANNONCES</a></li>
+        <div class="line">
+
+        </div>
+        <li><%= link_to 'CONNECTION' %></li>
+        <li><%= link_to 'INSCRIPTION', :class => "letter-2 purple-button" %></li>
       </ul>
     </div>
 

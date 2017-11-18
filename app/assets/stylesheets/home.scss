@@ -98,7 +98,7 @@ section.home1{
 }
 
 .les-partenaires img{
-  max-height: 100px;
+  max-height: 80px;
   width: auto;
   margin: 20px;
 }
@@ -108,6 +108,35 @@ section.home1{
   justify-content: space-between;
 }
 
+@media screen and (max-width: 1000px) {
+  .les-partenaires {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .list-explication{
+    flex-direction: column!important;
+  }
+
+  .list-explication li{
+    width: 100%!important;
+  }
+
+  .la-fame{
+    background-position: top!important;
+    background-size: cover!important;
+  }
+
+  .title-follow-footer{
+    font-size: 11px;
+  }
+
+  .padding-mission{
+    padding: 20px 0px
+  }
+}
+
 .list-explication li h4:before {
   margin-right: 10px;
   content: counter(item)".";
@@ -115,6 +144,11 @@ section.home1{
   font-size: 27px;
   text-align: center;
   display: inline-block;
+}
+
+.mobile-list{
+  font-size: 15px;
+  padding-top: 25px;
 }
 
 .flex-columns{
