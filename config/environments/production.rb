@@ -12,7 +12,7 @@ Rails.application.configure do
     :authentication => :cram_md5
   }
 
-  config.action_mailer.default_url_options = { :host => 'www.paupiette' }
+  config.action_mailer.default_url_options = { :host => 'paupiettebordeaux.herokuapp.com' }
   # Code is not reloaded between requests.
   config.cache_classes = true
 

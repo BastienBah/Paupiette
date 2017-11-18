@@ -13,7 +13,7 @@ Rails.application.configure do
     :authentication => :cram_md5
   }
 
-  config.action_mailer.default_url_options = { :host => 'www.paupiette.co' }
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 
 
   # In the development environment your application's code is reloaded on
