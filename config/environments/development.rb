@@ -5,12 +5,12 @@ Rails.application.configure do
 
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    :user_name => '73daf315c61796',
-    :password => 'c122df7cc956d0',
-    :address => 'smtp.mailtrap.io',
-    :domain => 'smtp.mailtrap.io',
-    :port => '2525',
-    :authentication => :cram_md5
+    :port           => ENV['MAILGUN_SMTP_PORT'],
+    :address        => ENV['MAILGUN_SMTP_SERVER'],
+    :user_name      => ENV['MAILGUN_SMTP_LOGIN'],
+    :password       => ENV['MAILGUN_SMTP_PASSWORD'],
+    :domain         => 'paupiettebordeaux.herokuapp.com', #mydomain actually contains the realvalue
+    :authentication => :plain,
   }
 
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
