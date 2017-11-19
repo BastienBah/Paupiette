@@ -1,5 +1,10 @@
-<p>Welcome <%= @email %>!</p>
+<p>Bonjour et bienvenue chez Paupiette ! </p>
 
-<p>You can confirm your account email through the link below:</p>
+<p>Afin de confirmer votre inscription, nous vous prions de cliquer sur le lien suivant : <p><%= link_to 'Confirmez votre inscription', confirmation_url(@resource, confirmation_token: @token) %></p>
+Avant d’organiser ou de participer à un déjeuner, veuillez lire attentivement notre charte de bon fonctionnement en pièce jointe de ce formulaire. <p>
 
-<p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
+<p>Pour toute question, n’hésitez pas à nous contacter à l’adresse mail paupiette.cuisine@gmail.com <p>
+
+<p style="font-size: 8px">*Les informations recueillies sur ce formulaire sont enregistrées dans un fichier informatisé par Paupiette pour une mise en relation. Elles sont conservées pendant 2 ans et sont destinées à l’association.</p>
+
+<p style="font-size: 8px">Conformément à la loi « informatique et libertés », vous pouvez exercer votre droit d’accès aux données vous concernant et les faire rectifier en contactant : paupiette.cuisine@gmail.com </p>
