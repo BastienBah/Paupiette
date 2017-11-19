@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171116233655) do
+ActiveRecord::Schema.define(version: 20171119103305) do
 
   create_table "messages", force: :cascade do |t|
     t.integer "sender_id"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20171116233655) do
   create_table "participations", force: :cascade do |t|
     t.integer "user_id"
     t.integer "repa_id"
+    t.boolean "is_valid"
   end
 
   create_table "repas", force: :cascade do |t|

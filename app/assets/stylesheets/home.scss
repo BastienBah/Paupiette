@@ -114,6 +114,50 @@ section.home1{
   }
 }
 
+@media screen and (max-width: 500px) {
+  .resbutton, .parbutton{
+    display: none;
+  }
+
+  .responsiveres{
+    display: block!important;
+  }
+
+  .repas {
+    font-size: 10px;
+  }
+
+  .price{
+    font-size: 20px!important;
+  }
+
+  .repas h2{
+    font-size: 13px;
+  }
+
+  .repas .sous-titre{
+    font-size: 10px
+  }
+  .resparbutton, .resresbutton{
+    display: block;
+    width: fit-content;
+    margin: auto;
+  }
+
+  .tiny-container{
+    width: 100%;
+    padding: 10px
+  }
+
+  .repas{
+    padding-bottom: 0;
+  }
+}
+
+.dashboard{
+  margin-top: 30px
+}
+
 @media screen and (max-width: 720px) {
   .list-explication{
     flex-direction: column!important;
@@ -299,10 +343,18 @@ div.content{
   justify-content: center;
   align-items: center;
   height: 100px;
+}
 
-  ul {
-    margin: 0 auto 1em;
-  }
+.spbt{
+  justify-content: space-around!important;
+}
+
+.responsiveres{
+  display: none;
+}
+
+.contactbutton:hover{
+  background: #FFFFFF!important;
 }
 
 body{

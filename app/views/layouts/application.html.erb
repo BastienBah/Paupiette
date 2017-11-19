@@ -68,7 +68,11 @@
       <% end %>
       <div class="w14">
       <div class="responsive-right">
+        <% if !user_signed_in? %>
         <%= link_to 'Inscription', new_user_registration_path, :class => "letter-2 purple-button" %>
+        <% else %>
+        <%= link_to 'Deconnection', destroy_user_session_path, method: :delete%>
+        <% end %>
       </div>
     </div>
     </nav>
@@ -79,8 +83,13 @@
         <div class="line">
 
         </div>
-        <li><%= link_to 'CONNECTION' %></li>
-        <li><%= link_to 'INSCRIPTION', :class => "letter-2 purple-button" %></li>
+        <% if !user_signed_in? %>
+        <li><%= link_to 'CONNECTION', new_user_session_path %></li>
+        <li><%= link_to 'INSCRIPTION', new_user_registration_path, :class => "letter-2 purple-button" %></li>
+        <% else %>
+        <li><%= link_to 'DASHBOARD', dashboard_path %></li>
+        <li><%= link_to 'MON COMPTE', edit_user_registration_path %></li>
+        <% end %>
       </ul>
     </div>
 
@@ -94,14 +103,11 @@
         </div>
       </div>
       <div class="navbar paupiette-container container">
-        <ul class="spbt onglet-left col-lg-4">
+        <ul class="spbt onglet-left col-lg-5">
           <li class="menu-li"><a href="<%= root_path %>">ACCUEIL</a></li>
           <li class="menu-li"><a href="<%= repas_path %>">ANNONCES</a></li>
         </ul>
         <% if user_signed_in? %>
-        <div class="col-lg-1">
-
-        </div>
         <% else %>
         <div class="">
 
@@ -113,7 +119,7 @@
         <% if user_signed_in? %>
         <ul class="spbt onglet-right col-lg-5">
         <% else %>
-        <ul class="spbt onglet-right col-lg-4">
+        <ul class="spbt onglet-right col-lg-5">
         <% end %>
           <% if user_signed_in? %>
             <% if current_user.role == true %>
@@ -156,6 +162,7 @@
     </div>
 
     <div class="content">
+      <p id='notice' class="bkg-violet <%= notice != nil ? "padding-notice" : nil %>"><b><%= notice %></b></p>
       <%= yield %>
     </div>
     <footer>

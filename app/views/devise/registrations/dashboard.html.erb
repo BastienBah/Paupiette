@@ -55,6 +55,7 @@
     <% end #fin du if role %>
     <% if current_user.role == false %>
       <div class="dashboard container">
+        <h3>À venir</h3>
         <% @participations.each do |participation| %>
           <% repa = Repa.find(participation.repa_id) %>
           <div class="row repas">
@@ -81,10 +82,17 @@
               <div class="col-lg-2 flex-center">
                 <span class="price"><%= repa.prix %>€</span>
               </div>
+              <% @participation.is_valid %>
                 <div class="col-lg-2 bkg-violet flex-center font-white resbutton contactbutton">
                   <%= link_to new_messages_path(:user_id => repa.user_id), class:"flex-center" do %>
                     <p> Contacter l'hôte </p>
                 </div>
+                <% else %>
+                <div class="col-lg-2 bkg-violet flex-center font-white resbutton contactbutton">
+                  En attente de validation
+                </div>
+                <% end %>
+                <% %>
                 </div>
                 </div>
         <% end %>

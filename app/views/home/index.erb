@@ -12,8 +12,8 @@
         <h2 class="soustitre">Paupiette réunit séniors et étudiants le temps d’un déjeuner, autour d’un bon petit plat !</h2>
         <% if !user_signed_in? %>
         <div class="singin">
-              <%= link_to "Je suis chef de cuisine !", new_user_registration_path(:role => true), :class => "cuisine bkg-violet font-white" %>
-              <%= link_to "Je suis étudiant !", new_user_registration_path(:role => false), :class => "glouton bkg-violet font-white"%>
+              <%= link_to "Je suis hôte", new_user_registration_path(:role => true), :class => "cuisine bkg-violet font-white" %>
+              <%= link_to "Je suis convive", new_user_registration_path(:role => false), :class => "glouton bkg-violet font-white"%>
         <% end %>
 
       </div>

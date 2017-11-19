@@ -1,5 +1,4 @@
 <section class="index-repas">
-  <p id='notice' class="bkg-violet <%= notice != nil ? "padding-notice" : nil %>"><b><%= notice %></b></p>
 
   <% if user_signed_in? %>
     <div class="container no-padding">
@@ -64,6 +63,23 @@
                   </div>
                 <% end %>
               </div>
+            </div>
+            <div class="responsiveres">
+              <% if !Participation.where(user_id: current_user.id, repa_id: repa.id).empty? %>
+                <div class="col-lg-2 bkg-violet flex-center font-white resparbutton">
+                  <p> Je participe déjà.</p>
+                </div>
+              <% elsif current_user.role == true %>
+                <div class="col-lg-2 bkg-violet flex-center font-white resparbutton">
+                  <p> Réservé aux étudiants.</p>
+                </div>
+              <% else %>
+                <div class="col-lg-2 bkg-violet flex-center font-white resresbutton popupres">
+                  <%= link_to repa_participations_path(repa.id), method: :post, class:"flex-center" do %>
+                    <p> Réserver </p>
+                  <% end %>
+                </div>
+              <% end %>
             </div>
           <% end %>
         <% end %>
