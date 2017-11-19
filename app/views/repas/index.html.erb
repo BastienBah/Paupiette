@@ -25,7 +25,7 @@
         <% @repas.each do |repa| %>
           <% if repa.user.ville == get_selected_city && (available_places(repa) > 0)%>
           <% compteur+= 1 %>
-            <% if repa.date > Time.now %>
+
               <div class="row repas">
                 <div class="col-lg-12 bkg-light-grey no-padding flex">
                   <div class="col-lg-2 bkg-med-grey img-repas" style="background: url('<%= repa.image.url %>')">
@@ -86,7 +86,7 @@
               <% end %>
             </div>
           <% end %>
-        <% end %>
+
         <% if compteur == 0 && get_selected_city != nil%>
         <%=  "Il n'y a pas de repas pour " + get_selected_city %>
         <% end %>

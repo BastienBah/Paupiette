@@ -9,13 +9,13 @@
     </ul>
   </div>
 <% end %>
-<div class="container">
-<h1>Envoi d'un message à <%= User.find(params[:user_id]).prenom %> <%= User.find(params[:user_id]).nom %></h1>
+<div class="container new-message">
+<h1 class="apple-title">Envoi d'un message à <%= User.find(params[:user_id]).prenom %> <%= User.find(params[:user_id]).nom %></h1>
 
 <%= form_for(@message) do |f| %>
   <%= f.hidden_field :dest_id, :value => params[:user_id] %>
-  <%= f.text_area :message %>
+  <%= f.text_area :message, :class => "message-input" %>
 
-  <%= f.submit "Envoyer" %>
+  <%= f.submit "Envoyer", :class => "btn-paupiette" %>
 <% end %>
 </div>
