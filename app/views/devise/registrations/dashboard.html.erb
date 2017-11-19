@@ -7,6 +7,20 @@
     </div>
     <p><%= current_user.nom %> <%= current_user.prenom %></p>
     <%= link_to 'Modifier mes informations', edit_user_registration_path, :class => 'font-black modify-button' %>
+    <div class="container bkg-light-grey m-t-10 messagebkg">
+      <h4 class="apple-title">Messages</h4>
+      <% if @messages.length != 0 %>
+        <% @messages.each do |message| %>
+          <div class="message-container">
+          <p class="sendername"><%= User.find(message.sender_id).prenom %> <%= User.find(message.sender_id).nom %></p>
+          <p class="messagebody"><%= message.message %></p>
+          <%= link_to "Répondre" , new_messages_path(:user_id => message.sender_id) , :class => "answermessage"%>
+        </div>
+        <% end %>
+        <%else%>
+        <p class="">vous n'avez reçu aucun message</p>
+      <% end %>
+    </div>
   </div>
 
   <div class="col-lg-9 bkg-light-grey horiz-center">
@@ -82,32 +96,18 @@
               <div class="col-lg-2 flex-center">
                 <span class="price"><%= repa.prix %>€</span>
               </div>
-              <% @participation.is_valid %>
+              <% if participation.is_valid %>
                 <div class="col-lg-2 bkg-violet flex-center font-white resbutton contactbutton">
-                  <%= link_to new_messages_path(:user_id => repa.user_id), class:"flex-center" do %>
-                    <p> Contacter l'hôte </p>
+                  <%= link_to "Contacter l'hôte",new_messages_path(:user_id => repa.user_id), class:"flex-center" %>
                 </div>
                 <% else %>
                 <div class="col-lg-2 bkg-violet flex-center font-white resbutton contactbutton">
-                  En attente de validation
+                  <p>En attente de validation</p>
                 </div>
                 <% end %>
-                <% %>
                 </div>
                 </div>
         <% end %>
-        <% end %>
     <% end %>
 </div>
-</div>
-
-<div class="container bkg-light-grey m-t-10">
-  <% if @messages.length != 0 %>
-    <% @messages.each do |message| %>
-      <p><%= User.find(message.sender_id).prenom %> <%= User.find(message.sender_id).nom %></p>
-      <p><%= message.message %></p>
-    <% end %>
-    <%else%>
-    <p>vous n'avez reçu aucun message</p>
-  <% end %>
 </div>
