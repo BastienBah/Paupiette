@@ -23,7 +23,7 @@
     </div>
   </div>
 
-  <div class="col-lg-9 bkg-light-grey horiz-center">
+  <div class="col-lg-9 bkg-light-grey horiz-center next-container">
     <% if current_user.role == true %>
     <h3>Vos repas</h3>
     <div class="container index-repas">
@@ -107,6 +107,9 @@
                 <% end %>
                 </div>
                 </div>
+        <% end %>
+        <% if @participations.count == 0 %>
+        <p>Vous n'avez pas de repas prévu</p>
         <% end %>
     <% end %>
 </div>
