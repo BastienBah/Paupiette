@@ -8,11 +8,11 @@ Rails.application.configure do
     :address        => ENV['MAILGUN_SMTP_SERVER'],
     :user_name      => ENV['MAILGUN_SMTP_LOGIN'],
     :password       => ENV['MAILGUN_SMTP_PASSWORD'],
-    :domain         => 'paupiettebordeaux.herokuapp.com', #mydomain actually contains the realvalue
+    :domain         => 'www.paupiette.co', #mydomain actually contains the realvalue
     :authentication => :plain,
   }
 
-  config.action_mailer.default_url_options = { :host => 'paupiettebordeaux.herokuapp.com' }
+  config.action_mailer.default_url_options = { :host => 'www.paupiette.co' }
   # Code is not reloaded between requests.
   config.cache_classes = true
 
