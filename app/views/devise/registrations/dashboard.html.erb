@@ -1,5 +1,5 @@
 <div class="container dashboard">
-  <h4>Bienvenue sur votre espace <%= current_user.prenom %></h4>
+  <h4 class="apple-title">Bienvenue sur votre espace <%= current_user.prenom %></h4>
   <div class="row">
   <div class="col-lg-3 flex-center flex-columns">
     <div class="avatar" style="background: url('<%= current_user.image.url %>')">
@@ -25,7 +25,7 @@
 
   <div class="col-lg-9 bkg-light-grey horiz-center next-container">
     <% if current_user.role == true %>
-    <h3>Vos repas</h3>
+    <h3 class="apple-title">Vos repas</h3>
     <div class="container index-repas">
       <% if @repas.length != 0 %>
       <% @repas.each do |repa| %>
@@ -69,7 +69,7 @@
     <% end #fin du if role %>
     <% if current_user.role == false %>
       <div class="dashboard container">
-        <h3>À venir</h3>
+        <h3 class="apple-title">À venir</h3>
         <% @participations.each do |participation| %>
           <% repa = Repa.find(participation.repa_id) %>
           <div class="row repas">

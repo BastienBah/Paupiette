@@ -11,7 +11,7 @@ when "4"
 end %>
 <div class="container">
   <div class="row">
-  <div class="col-lg-7 bkg-light-grey">
+  <div class="col-lg-7 bkg-light-grey repas-show-container">
     <div class="row">
     <div class="col-lg-3 bkg-dark-grey image-repas-show" style="background: url('<%= @repa.image.url %>')">
 
@@ -43,6 +43,12 @@ end %>
 
     </div>
     <p><%= @user.prenom %> <%= @user.nom %></p>
+    <% if Participation.find_by(repa_id: @repa.id, user_id: current_user.id)%>
+    <% if Participation.find_by(repa_id: @repa.id, user_id: current_user.id).is_valid == true %>
+      <p>Telephone: <%= @user.telephone %></p>
+      <p>Adresse: <%= @user.numero_rue %> <%= @user.rue %> <%= @user.code_postal %> <%= @user.ville %></p>
+    <% end %>
+    <% end %>
   </div>
 </div>
 </div>
