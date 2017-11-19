@@ -38,6 +38,9 @@
 
 .resparbutton, .resresbutton{
   display: none;
+  p {
+    margin: 0;
+  }
 }
 
 .valbutton{
@@ -690,7 +693,7 @@ margin-bottom: 5px;
 }
 
 .messagebkg{
-  border-radius: 5px; 
+  border-radius: 5px;
 }
 
 .apple-title{

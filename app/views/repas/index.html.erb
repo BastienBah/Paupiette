@@ -25,45 +25,49 @@
         <% @repas.each do |repa| %>
           <% if repa.user.ville == get_selected_city && (available_places(repa) > 0)%>
           <% compteur+= 1 %>
-            <div class="row repas">
-              <div class="col-lg-12 bkg-light-grey no-padding flex">
-                <div class="col-lg-2 bkg-med-grey img-repas" style="background: url('<%= repa.image.url %>')">
-                </div>
-                <div class="col-lg-3 p-15">
-                  <h2><%= repa.titre %></h2>
-                  <p class="sous-titre">chez <%= repa.user.prenom %></p>
-                  <p class="font-dark-grey no-margin-b"><%= repa.menu %><p>
-                  <%= link_to 'voir plus...', repa, :class => 'repas-show' %>
-                  <% if current_user.id == repa.id %>
-                    <%= link_to 'Edit', edit_repa_path(repa) %>
-                  <% end %>
-                </div>
-                <div class="col-lg-3 p-15 font-dark-grey">
-                  <p>à <%= repa.user.ville %> le <%= repa.date.strftime("%d/%m/%y") %></p>
-                  <br>
-                  <p> Il reste <b><%= available_places(repa) %></b> places. </p>
-                </div>
-                <div class="col-lg-2 flex-center">
-                  <span class="price"><%= repa.prix %> €</span>
-                </div>
-
-                <% if !Participation.where(user_id: current_user.id, repa_id: repa.id).empty? %>
-                  <div class="col-lg-2 bkg-violet flex-center font-white parbutton">
-                    <p> Je participe déjà.</p>
+            <% if repa.date > Time.now %>
+              <div class="row repas">
+                <div class="col-lg-12 bkg-light-grey no-padding flex">
+                  <div class="col-lg-2 bkg-med-grey img-repas" style="background: url('<%= repa.image.url %>')">
                   </div>
-                <% elsif current_user.role == true %>
-                  <div class="col-lg-2 bkg-violet flex-center font-white parbutton">
-                    <p> Réservé aux étudiants.</p>
-                  </div>
-                <% else %>
-                  <div class="col-lg-2 bkg-violet flex-center font-white resbutton popupres">
-                    <%= link_to repa_participations_path(repa.id), method: :post, class:"flex-center" do %>
-                      <p> Réserver </p>
+                  <div class="col-lg-3 p-15">
+                    <h2><%= repa.titre %></h2>
+                    <p class="sous-titre">chez <%= repa.user.prenom %></p>
+                    <p class="font-dark-grey no-margin-b"><%= repa.menu %><p>
+                    <%= link_to 'voir plus...', repa, :class => 'repas-show' %>
+                    <% if current_user.id == repa.id %>
+                      <%= link_to 'Edit', edit_repa_path(repa) %>
                     <% end %>
                   </div>
-                <% end %>
+                  <div class="col-lg-3 p-15 font-dark-grey">
+                    <p>à <%= repa.user.ville %> le <%= repa.date.strftime("%d/%m/%y") %></p>
+                    <br>
+                    <p> Il reste <b><%= available_places(repa) %></b> places. </p>
+                  </div>
+                  <div class="col-lg-2 flex-center">
+                    <span class="price"><%= repa.prix %> €</span>
+                  </div>
+
+                  <% if !Participation.where(user_id: current_user.id, repa_id: repa.id).empty? %>
+                    <div class="col-lg-2 bkg-violet flex-center font-white parbutton">
+                      <p style="margin:0"> Je participe déjà.</p>
+                    </div>
+                  <% elsif current_user.role == true %>
+                    <div class="col-lg-2 bkg-violet flex-center font-white parbutton">
+                      <p style="margin:0"> Réservé aux étudiants.</p>
+                    </div>
+                  <% else %>
+                    <div class="col-lg-2 bkg-violet flex-center font-white resbutton popupres">
+                      <%= link_to repa_participations_path(repa.id), method: :post, class:"flex-center" do %>
+                        <p> Réserver </p>
+                      <% end %>
+                    </div>
+                  <% end %>
+                </div>
               </div>
-            </div>
+            <% else %>
+              <% compteur = 0 %>
+            <% end %>
             <div class="responsiveres">
               <% if !Participation.where(user_id: current_user.id, repa_id: repa.id).empty? %>
                 <div class="col-lg-2 bkg-violet flex-center font-white resparbutton">

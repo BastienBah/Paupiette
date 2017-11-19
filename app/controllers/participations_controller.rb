@@ -1,7 +1,4 @@
 class ParticipationsController < ActionController::Base
-  def show
-
-  end
 
   def create
     @participation = Participation.new
