@@ -26,6 +26,7 @@
   <div class="col-lg-9 bkg-light-grey horiz-center next-container">
     <% if current_user.role == true %>
     <h3 class="apple-title">Vos repas</h3>
+    <i>Vous ne pouvez pas supprimer vos repas si des convives y participent. </i>
     <div class="container index-repas">
       <% if @repas.length != 0 %>
       <% @repas.each do |repa| %>
@@ -53,9 +54,11 @@
               <div class="col-lg-2 flex-center">
                 <span class="price"><%= repa.prix %>€</span>
               </div>
+              <% if repa.participations.count == 0 %>
                 <div class="col-lg-2 bkg-violet flex-center font-white resbutton delbutton">
                   <%= link_to repa_path(repa), method: :delete, class:"flex-center" do %>
                     <p> Supprimer </p>
+                  <% end %>
                 </div>
               <% end %>
             </div>
