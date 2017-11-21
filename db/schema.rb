@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171115152451) do
+ActiveRecord::Schema.define(version: 20171119103305) do
 
   create_table "messages", force: :cascade do |t|
     t.integer "sender_id"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20171115152451) do
   create_table "participations", force: :cascade do |t|
     t.integer "user_id"
     t.integer "repa_id"
+    t.boolean "is_valid"
   end
 
   create_table "repas", force: :cascade do |t|
@@ -69,6 +70,10 @@ ActiveRecord::Schema.define(version: 20171115152451) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.string   "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

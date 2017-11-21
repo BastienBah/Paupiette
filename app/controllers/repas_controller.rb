@@ -4,7 +4,7 @@ class RepasController < ApplicationController
   # GET /repas
   # GET /repas.json
   def index
-    @repas = Repa.all
+    @repas = Repa.where("date >= ?", Time.now ).order('date ASC')
     @users = User.all
   end
 

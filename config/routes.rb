@@ -2,10 +2,13 @@ Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
   resources :repas do
-    resources :participations, only: [:show,:create,:destroy]
+    resources :participations, only: [:show,:create,:destroy,:validate]
   end
 
   get "/participation" => "home#participation"
+
+  match 'validate', to: 'participations#validate', via: [:patch]
+
   resource :messages
 
   devise_for :users, :controllers => {:registrations => "users/registrations"}

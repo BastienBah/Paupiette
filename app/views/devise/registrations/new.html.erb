@@ -11,11 +11,7 @@
   <div class="">
     <div class="field">
       <%= f.label :Où_habitez_vous?, :class => "full-width" %>
-      <select class="" name="composition">
-        <option value="Bordeaux">Bordeaux</option>
-        <option value="Paris">Paris</option>
-        <option value="Quimper">Quimper</option>
-      </select>
+      <%= f.select :ville, ['Bordeaux', 'Paris','Quimper']%>
     </div>
     <div class="field">
       <%= f.label :mettez_un_beau_selfie %>
@@ -73,11 +69,7 @@
   <div class="">
     <div class="field">
       <%= f.label :Où_habitez_vous?, :class => "full-width" %>
-      <select class="" name="composition">
-        <option value="Bordeaux">Bordeaux</option>
-        <option value="Paris">Paris</option>
-        <option value="3">Quimper</option>
-      </select>
+      <%= f.select :ville, ['Bordeaux', 'Paris','Quimper']%>
     </div>
 
     <div class="field">

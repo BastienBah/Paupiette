@@ -9,6 +9,10 @@
   }
 }
 
+.padding-mission{
+  padding: 40px 0px;
+}
+
 section.home1{
   background: image-url('image_repas.png');
   background-size: cover!important;
@@ -67,12 +71,149 @@ section.home1{
 
 .explication{
   font-size: 25px;
-  padding-top: 50px!important;
-  padding-top: 50px!important;
+}
+
+.list-explication{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.list-explication h4{
+  font-weight: 900;
+  color: #5B1633;
+  font-size: 27px
+}
+
+.list-explication {
+  counter-reset: item;
+}
+.list-explication ol {
+  list-style: none;
+}
+.list-explication li {
+  counter-increment: item;
+  margin-bottom: 5px;
+  list-style: none;
+}
+
+.les-partenaires img{
+  max-height: 80px;
+  width: auto;
+  margin: 20px;
+}
+
+.les-partenaires{
+  display: flex;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 1000px) {
+  .les-partenaires {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .resbutton, .parbutton{
+    display: none;
+  }
+
+  .responsiveres{
+    display: block!important;
+  }
+
+  .repas {
+    font-size: 10px;
+  }
+
+  .price{
+    font-size: 20px!important;
+  }
+
+  .repas h2{
+    font-size: 13px;
+  }
+
+  .repas .sous-titre{
+    font-size: 10px
+  }
+  .resparbutton, .resresbutton{
+    display: block;
+    width: fit-content;
+    margin: auto;
+  }
+
+  .tiny-container{
+    width: 100%;
+    padding: 10px
+  }
+
+  .repas{
+    padding-bottom: 0;
+  }
+}
+
+.dashboard{
+  margin-top: 10px
+}
+
+@media screen and (max-width: 720px) {
+  .list-explication{
+    flex-direction: column!important;
+  }
+
+  .list-explication li{
+    width: 100%!important;
+  }
+
+  .la-fame{
+    background-position: top!important;
+    background-size: cover!important;
+  }
+
+  .title-follow-footer{
+    font-size: 11px;
+  }
+
+  .padding-mission{
+    padding: 20px 0px
+  }
+}
+
+.list-explication li h4:before {
+  margin-right: 10px;
+  content: counter(item)".";
+  color: #5B1633;
+  font-size: 27px;
+  text-align: center;
+  display: inline-block;
+}
+
+.repas-show-container{
+  height: fit-content;
+margin-top: 60px;
+}
+
+.mobile-list{
+  font-size: 15px;
+  padding-top: 25px;
+}
+
+.btn-paupiette{
+  border: none
+}
+
+.message-input{
+  border-radius: 13px;
 }
 
 .flex-columns{
   flex-direction: column;
+}
+
+.next-container{
+  height: fit-content;
 }
 
 .text-left{
@@ -219,10 +360,18 @@ div.content{
   justify-content: center;
   align-items: center;
   height: 100px;
+}
 
-  ul {
-    margin: 0 auto 1em;
-  }
+.spbt{
+  justify-content: space-around!important;
+}
+
+.responsiveres{
+  display: none;
+}
+
+.contactbutton:hover{
+  background: #FFFFFF!important;
 }
 
 body{

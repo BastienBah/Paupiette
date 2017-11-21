@@ -21,11 +21,8 @@
 <div class="col-lg-6 flex-user-edit">
   <div class="field">
     <%= f.label :ville %>
-    <select class="" name="composition">
-      <option value="Bordeaux">Bordeaux</option>
-      <option value="Paris">Paris</option>
-      <option value="Quimper">Quimper</option>
-    </select>
+    <%= f.select :ville, ['Bordeaux', 'Paris','Quimper']%>
+
   </div>
   <div class="field">
     <%= f.label :mettez_un_beau_selfie %>
@@ -107,11 +104,10 @@
 <div class="row edit-user-container bkg-light-grey">
   <div class="field">
     <%= f.label :ville %>
-    <select class="" name="composition">
-      <option value="Bordeaux">Bordeaux</option>
-      <option value="Paris">Paris</option>
-      <option value="3">Quimper</option>
-    </select>
+    <%= f.select :ville, ['Bordeaux', 'Paris','Quimper']%>
+
+    <!-- <%= f.select :ville, options_for_select([['Bordeaux'], ['Paris'], ['Quimper']]) %> -->
+
   </div>
 
   <div class="field">

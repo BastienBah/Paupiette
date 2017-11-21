@@ -36,6 +36,20 @@
   color: #FFFFFF!important;
 }
 
+.resparbutton, .resresbutton{
+  display: none;
+  p {
+    margin: 0;
+  }
+}
+
+.valbutton{
+  background: #47b745
+}
+
+.padding-partenaires{
+  padding-top: 30px
+}
 .fleche1{
   margin-left: 50%;
   height: 50px;
@@ -649,4 +663,46 @@ background-size: cover!important;
 
 .btn-paupiette{
   cursor: pointer;
+}
+
+.message-container{
+  background: #0072C6;
+color: #FFFFFF;
+padding: 15px;
+margin: 5px 0px;
+border-radius: 20px;
+width: fit-content;
+}
+
+.sendername{
+  margin-bottom: 0px;
+  font-weight: 900;
+}
+
+.messagebody{
+margin-bottom: 5px;
+}
+
+.answermessage{
+  background-color: #FFFFFF;
+  border-radius: 15px;
+  color: #000000;
+  padding: 5px;
+  margin-top: 5px;
+  transition: .3s all;
+}
+
+.messagebkg{
+  border-radius: 5px;
+}
+
+.apple-title{
+  font-weight: 900;
+  font-size: 30px;
+  margin-top: 10px;
+}
+
+.answermessage:hover{
+  background: #000000;
+  color: #FFFFFF!important;
 }

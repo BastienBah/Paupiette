@@ -12,8 +12,8 @@
         <h2 class="soustitre">Paupiette réunit séniors et étudiants le temps d’un déjeuner, autour d’un bon petit plat !</h2>
         <% if !user_signed_in? %>
         <div class="singin">
-              <%= link_to "Je suis chef de cuisine !", new_user_registration_path(:role => true), :class => "cuisine bkg-violet font-white" %>
-              <%= link_to "Je suis étudiant !", new_user_registration_path(:role => false), :class => "glouton bkg-violet font-white"%>
+              <%= link_to "Je suis hôte", new_user_registration_path(:role => true), :class => "cuisine bkg-violet font-white" %>
+              <%= link_to "Je suis convive", new_user_registration_path(:role => false), :class => "glouton bkg-violet font-white"%>
         <% end %>
 
       </div>
@@ -69,29 +69,16 @@
 <section>
   <div class="container-fluid bkg-light-grey">
   <div class="container explication">
-    <div class="row">
-    <div class="chou-fleur col-lg-6" style="background:url('<%= image_url('chou-fleur.svg') %>')">
-
-    </div>
-    <div class="col-lg-6 vertical-center">
-      <p><span class="fw-600">Paupiette</span> et en relation étudiants et sénior sur le temps du déjeuner pour partager
-un bon petit plat !</p>
+    <div class="row vertical-center">
+    <div class="offset-lg-2 col-lg-8 col-md-12 vertical-center flex-columns padding-mission">
+      <h3 class="playlist">Notre mission</h3>
+      <p class="text-center">Nous luttons contre la solitude des séniors tout en proposant un repas complet à prix accessible aux étudiants.</p>
     </div>
   </div>
 </div>
   </div>
   <div class="container-fluid bkg-white">
-  <div class="container explication">
-    <div class="row">
-      <div class="col-lg-6 vertical-center flex-columns">
-        <h2 class="text-left">NOS MISSIONS</h2>
-        <p>Nous luttons contre la solitude des séniors tout en proposant un repas complet à prix accessible
-aux étudiants.</p>
-      </div>
-    <div class="chou-fleur col-lg-6" style="background:url('<%= image_url('radis.svg') %>')">
-
-    </div>
-  </div>
+  <div class="container explication padding-mission">
   <div class="row">
     <div class="col-lg-6">
       <img src="<%= image_url('green-rectangle.svg') %>" alt="">
@@ -105,15 +92,11 @@ aux étudiants.</p>
   <div class="container-fluid bkg-light-grey">
   <div class="container explication">
     <div class="row">
-    <div class="chou-fleur col-lg-6" style="background:url('<%= image_url('carotte.svg') %>')">
-
-    </div>
-    <div class="col-lg-6 vertical-center flex-columns">
-      <h2 class="text-left">COMMENT ÇA MARCHE?</h2>
-      <ol>
-        <li>Vous annoncez en amont vos critères</li>
-        <li>La mise en relation est validée</li>
-        <li>Accueillez les étudiants à votre domicile</li>
+    <div class="col-lg-12 vertical-center flex-columns padding-mission">
+      <ol class="list-explication">
+        <li><h4>Proposez</h4><p>Vous annoncez en amont vos critères</p></li>
+        <li><h4>Confirmez</h4><p>La mise en relation est validée</p></li>
+        <li><h4>Accueillez</h4><p>Accueillez les étudiants à votre domicile</p></li>
       </ol>
     </div>
   </div>
@@ -121,12 +104,43 @@ aux étudiants.</p>
   </div>
   <div class="container">
     <div class="row">
+      <div class="col-lg-12 padding-mission">
+        <h3 class="playlist text-center">Ils parlent de nous :</h3>
+        <div class="les-partenaires">
+          <%= image_tag 'medias/part1.png' %>
+          <%= image_tag 'medias/part2.png' %>
+          <%= image_tag 'medias/part3.svg' %>
+          <%= image_tag 'medias/part4.png' %>
+          <%= image_tag 'medias/part5.png' %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
       <div class="col-lg-12 la-fame" style="background : url('<%= image_url('lacite.jpg') %>')">
 
       </div>
-      <div class="col-lg-12 text-center fs-30">
-        <p>CONSTRUISONS ENSEMBLE UNE NOUVELLE MANIÈRE DE DÉJEUNER !</p>
+      <div class="col-lg-12 text-center fs-30 m-t-10">
+        <p>Gourmandises, rires et partage garantis !</p>
       </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 padding-partenaires">
+        <h3 class="playlist text-center">Nos partenaires :</h3>
+        <div class="les-partenaires">
+          <%= image_tag 'partenaires/part1.png' %>
+          <%= image_tag 'partenaires/part2.gif' %>
+          <%= image_tag 'partenaires/part3.jpg' %>
+          <%= image_tag 'partenaires/part4.png' %>
+          <%= image_tag 'partenaires/part5.png' %>
+        </div>
+      </div>
+    </div>
+    <div class="line">
+
     </div>
   </div>
 </section>
