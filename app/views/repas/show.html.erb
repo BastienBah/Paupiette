@@ -42,7 +42,12 @@ end %>
     <div class="avatar" style="background: url(<%= @user.image.url %>)">
 
     </div>
-    <p><%= @user.prenom %> <%= @user.nom %></p>
+    <p><%= @user.prenom %>
+   <% if Participation.find_by(repa_id: @repa.id, user_id: current_user.id)%>
+    <% if Participation.find_by(repa_id: @repa.id, user_id: current_user.id).is_valid == true %>
+    <%= @user.nom %>
+    <% end %>
+    <% end %></p>
     <% if Participation.find_by(repa_id: @repa.id, user_id: current_user.id)%>
     <% if Participation.find_by(repa_id: @repa.id, user_id: current_user.id).is_valid == true %>
       <p>Telephone: <%= @user.telephone %></p>

@@ -37,4 +37,15 @@ class ParticipationsController < ActionController::Base
       end
   end
 
+  def guest
+    @participation = Participation.find(params[:format])
+    @participation.is_guest = true
+      if @participation.save!
+        redirect_to participation_path, notice: 'Votre validation a bien été prise en compte'
+        #format.json { redirect_to participation_path}
+      else
+       redirect_to participation_path, notice: 'Réésayez plus tard'
+      end
+  end
+
 end

@@ -34,7 +34,7 @@
   </div>
 
   <div class="field">
-    <%= f.label :prenom %>
+    <%= label(:prenom, "Prénom") %>
     <%= f.text_field :prenom %>
   </div>
 
@@ -49,12 +49,12 @@
   </div>
 
   <div class="field">
-    <%= f.label :password %>
+    <%= f.label :Nouveau_mot_de_passe %>
     <%= f.password_field :password, autocomplete: "off" %>
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %>
+    <%= f.label :Confirmer_le_nouveau_mot_de_passe %>
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 </div>
@@ -70,7 +70,7 @@
   </div>
 
   <div class="field">
-    <%= f.label :complement_adresse %>
+    <%= f.label(:complement_dadresse, "Complément d'adresse") %>
     <%= f.text_field :complement_adresse, placeholder: "Facultatif" %>
   </div>
 
