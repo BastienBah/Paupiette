@@ -73,7 +73,7 @@
     </div>
 
     <div class="field">
-      <%= f.label :mettez_un_beau_selfie %>
+      <%= f.label :Votre_photo %>
       <%= f.file_field :image %>
     </div>
     <div class="field">
@@ -81,7 +81,7 @@
     </div>
 
     <div class="field">
-      <%= f.text_field :prenom, :placeholder => "Prenom" %>
+      <%= f.text_field :prenom, :placeholder => "Prénom" %>
     </div>
 
     <div class="field">
@@ -89,7 +89,7 @@
     </div>
 
     <div class="field">
-      <%= f.text_field :telephone, :placeholder => "Telephone" %>
+      <%= f.text_field :telephone, :placeholder => "Téléphone" %>
     </div>
 
     <div class="field">
@@ -107,8 +107,8 @@
      <% else %>
      <div class="role-container">
        <div class="field role">
-         <%= f.label :role %><br />
-         <%= f.collection_radio_buttons :role, [[true, 'Chef de cuisine'] ,[false, 'Etudiant']], :first, :last, :class => "role-buttons"%>
+         <%= f.label :Je_suis %><br />
+         <%= f.collection_radio_buttons :role, [[true, 'Hôte'] ,[false, 'Convive']], :first, :last, :class => "role-buttons"%>
        </div>
      </div>
      <% end %>

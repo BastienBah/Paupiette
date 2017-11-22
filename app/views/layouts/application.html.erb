@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:og="http://ogp.me/ns#" >
 <head>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -35,6 +35,17 @@
   <link href="https://fonts.googleapis.com/css?family=Patrick+Hand+SC" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="twitter:title" content="Paupiette">
+  <meta name="twitter:description" content="Ce midi c'est chez mamie">
+  <meta name="twitter:image" content="<%= image_url('paupiette-logo.svg') %>">
+  <meta name="twitter:image:alt" content="Paupiette">
+  <meta property="og:title" content="Paupiette">
+  <meta property="og:type" content="Event">
+  <meta property="og:url" content="https://mathieuharribey.fr/meetIut.html">
+  <meta property="og:image" content="<%= image_url('paupiette-logo.svg') %>">
+  <meta property="og:description" content="Ce midi c'est chez mamie">
+  <meta property="og:email" content="Goulard.enora@gmail.com">
   <%= csrf_meta_tags %>
 
 
@@ -71,7 +82,7 @@
         <% if !user_signed_in? %>
         <%= link_to 'Inscription', new_user_registration_path, :class => "letter-2 purple-button" %>
         <% else %>
-        <%= link_to 'Deconnection', destroy_user_session_path, method: :delete%>
+        <%= link_to 'Deconnexion', destroy_user_session_path, method: :delete%>
         <% end %>
       </div>
     </div>
@@ -84,10 +95,10 @@
 
         </div>
         <% if !user_signed_in? %>
-        <li><%= link_to 'CONNECTION', new_user_session_path %></li>
+        <li><%= link_to 'CONNEXION', new_user_session_path %></li>
         <li><%= link_to 'INSCRIPTION', new_user_registration_path, :class => "letter-2 purple-button" %></li>
         <% else %>
-        <li><%= link_to 'DASHBOARD', dashboard_path %></li>
+        <li><%= link_to 'TABLEAU DE BORD', dashboard_path %></li>
         <li><%= link_to 'MON COMPTE', edit_user_registration_path %></li>
         <% end %>
       </ul>
@@ -137,7 +148,7 @@
             <% if current_user.admin == true %>
               <li><%= link_to 'Admin dashboard', participation_path %></li>
             <% else %>
-              <li><%= link_to 'Dashboard', dashboard_path %></li>
+              <li><%= link_to 'Tableau de bord', dashboard_path %></li>
             <% end %>
             <li><%= link_to "Me déconnecter", destroy_user_session_path, method: :delete %></li>
           </ul>
