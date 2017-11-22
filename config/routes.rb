@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   get "/participation" => "home#participation"
 
+  get "/confiance" => "home#confiance"
+
   match 'validate', to: 'participations#validate', via: [:patch]
 
   resource :messages
