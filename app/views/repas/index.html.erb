@@ -40,7 +40,7 @@
                     <% end %>
                   </div>
                   <div class="col-lg-3 p-15 font-dark-grey">
-                    <p>à <%= repa.user.ville %> le <%= repa.date.strftime("%d/%m/%y") %></p>
+                    <p>à <%= repa.user.quartier? ? (repa.user.quartier + ", ") : nil %> <%= repa.user.ville %> le <%= repa.date.strftime("%d/%m/%y") %></p>
                     <br>
                     <p> Il reste <b><%= available_places(repa) %></b> places. </p>
                   </div>
@@ -88,7 +88,7 @@
           <% end %>
 
         <% if compteur == 0 && get_selected_city != nil%>
-          
+
         <% end %>
       <% end %>
     </div>
