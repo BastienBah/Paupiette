@@ -74,11 +74,20 @@ class RepasController < ApplicationController
   # DELETE /repas/1
   # DELETE /repas/1.json
   def destroy
-    @repa.destroy
-    respond_to do |format|
-      format.html { redirect_to dashboard_path, notice: 'Votre repas a bien été supprimé' }
-      format.json { head :no_content }
-    end
+    @participations = Participation.find_by(repa_id: @repa.id)
+    if @participation == nil
+      @repa.destroy
+      respond_to do |format|
+        format.html { redirect_to dashboard_path, notice: 'Votre repas a bien été supprimé' }
+        format.json { head :no_content }
+      end
+    else
+      respond_to do |format|
+        format.html { redirect_to dashboard_path, notice: "Quelqu'un participe déja à ce repas" }
+        format.json { head :no_content }
+      end
+  end
+
   end
 
   private
