@@ -56,12 +56,14 @@ end %>
   </div>
 </div>
 </div>
+<% if current_user.id == @repa.user_id %>
 <div class="container">
   <h3>Ils participent à ce repas: </h3>
   <ul>
   <% @participations.each do |participation| %>
     <% user = User.find(participation.user_id) %>
     <li class="flex m-t-10 align-center"><div class="mini-avatar" style="background: url('<%= user.image.url %>')"></div><%= user.nom %> <%= user.prenom %> <%= link_to "Nouveau message" , new_messages_path(:user_id => user.id) , :class => "btn-paupiette"%></li>
+  <% end %>
   <% end %>
 </ul>
 </div>
