@@ -33,6 +33,9 @@ end %>
         <p>Plat : <%= @repa.plat %> </p>
         <p>Dessert : <%= @repa.dessert %> </p>
       <% end %>
+      <% if current_user.id == @repa.user_id %>
+      <%= link_to 'Modifier mon repas', edit_repa_url(@repa), :class => "btn-paupiette m-b-20" %>
+      <% end %>
     </div>
   </div>
   </div>
