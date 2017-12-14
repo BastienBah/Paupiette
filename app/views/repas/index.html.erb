@@ -58,8 +58,13 @@
                     </div>
                   <% else %>
                     <div class="col-lg-2 bkg-violet flex-center font-white resbutton popupres">
-                      <%= link_to repa_participations_path(repa.id), method: :post, class:"flex-center" do %>
-                        <p> Réserver </p>
+
+                        <div class="button-confirmation">
+                          RÉSERVER
+                        </div>
+
+                        <%= link_to repa_participations_path(repa.id), method: :post, class:"flex-center" do %>
+                        <p> Cliquez pour confirmer </p>
                       <% end %>
                     </div>
                   <% end %>

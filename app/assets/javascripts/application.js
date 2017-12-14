@@ -15,6 +15,15 @@
 //= require turbolinks
 //= require_tree .
 
+
+var buttons = document.getElementsByClassName('button-confirmation');
+
+for (var i = 0; i < buttons.length; i++) {
+  buttons[i].addEventListener('click', displayConfirmation);
+}
+
+
+
 function toggleBurger(x){
   console.log(x);
   x.classList.toggle('open');
@@ -23,4 +32,10 @@ function toggleBurger(x){
 
 function popupInfos(){
   document.getElementById('popupInfos').style.display = "block";
+}
+
+function displayConfirmation(e){
+  buttonToHide = e.target;
+  buttonToHide.style.opacity = "0";
+  setTimeout(function(){buttonToHide.style.display = "none"}, 500);
 }
