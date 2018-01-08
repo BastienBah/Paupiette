@@ -4,7 +4,7 @@ en:
   devise:
     confirmations:
       confirmed: "Votre adresse mail a bien été confirmée"
-      send_instructions: "Vous allez recevoir un mail avec les instructions pour confirmer votre adresse mail dans quelques minutes."
+      send_instructions: "Vous allez recevoir un mail avec les instructions pour confirmer votre adresse mail dans quelques minutes. (vérifier dans les indésirables)"
       send_paranoid_instructions: "Si votre adresse mail existe dans notre base de donnée, vous allez recevoir un mail avec les instructions pour confirmer votre adresse mail dans quelques minutes."
     failure:
       already_authenticated: "Vous êtes déjà connecté"
@@ -41,16 +41,16 @@ en:
       signed_up: "Bienvenue! Vous avez créer vore compte avec succès."
       signed_up_but_inactive: "Vous avez créer vore compte avec succès. Cependant, vous ne pouvez pas vous connecter car votre compte n'est pas encore activé."
       signed_up_but_locked: "Vous avez créer vore compte avec succès. Cependant, vous ne pouvez pas vous connecter car votre compte est bloqué."
-      signed_up_but_unconfirmed: "Un mail de confirmation vous a été envoyé. Cliquez sur le lien pour activer votre compte."
-      update_needs_confirmation: "Vous avez mis à jour votre compte avec succès, mais nous avez besoin de vérifier votre adresse mail. Consultez vos mails et cliquez sur le lien pour vérifier votre nouvelle adresse mail."
+      signed_up_but_unconfirmed: "Un mail de confirmation vous a été envoyé. Cliquez sur le lien pour activer votre compte. (vérifier dans les indésirables)"
+      update_needs_confirmation: "Vous avez mis à jour votre compte avec succès, mais nous avez besoin de vérifier votre adresse mail. Consultez vos mails et cliquez sur le lien pour vérifier votre nouvelle adresse mail. (vérifier dans les indésirables)"
       updated: "Votre compte a bien été modifié."
     sessions:
       signed_in: "Vous êtes désormais connecté."
       signed_out: "Vous vous êtes déconnecté avec succès."
       already_signed_out: "Vous vous êtes déconnecté avec succès."
     unlocks:
-      send_instructions: "Vous allez recevoir un mail pour débloquer votre compte dans quelques minutes."
-      send_paranoid_instructions: "Si votre compte existe, vous allez recevoir un email avec les instructions pour le débloquerdans quelques minutes."
+      send_instructions: "Vous allez recevoir un mail pour débloquer votre compte dans quelques minutes. (vérifier dans les indésirables)"
+      send_paranoid_instructions: "Si votre compte existe, vous allez recevoir un email avec les instructions pour le débloquerdans quelques minutes. (vérifier dans les indésirables)"
       unlocked: "Votre compte a été débloqué avec succès. Connectez-vous pour continuer."
   errors:
     messages:

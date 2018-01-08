@@ -306,8 +306,7 @@ input[type=radio]:focus{
 
 .titre-repas{
   width: fit-content;
-  margin: auto;
-  margin-top: 25px;
+  margin: 25px 30px 0 30px;
 }
 
 .flex-center{
@@ -367,11 +366,6 @@ a:hover{
   font-size: 25px;
   font-weight: 800;
   margin-left: 0px;
-}
-
-.titre-repas{
-margin-left: 0px;
-
 }
 
 .valrepas{
@@ -681,11 +675,22 @@ color: #ffffff;
     padding: 5px 15px;
 }
 
-.image-repas-show{
-  background-position: center!important;
-background-size: cover!important;
+@media screen and (max-width:992px){
+  .repas-infos-2{
+    padding:1em;
+  }
 }
 
+
+.image-repas-show{
+  background-position: center!important;
+  background-size: cover!important;
+}
+@media screen and (max-width:992px){
+  .image-repas-show {
+    display: none;
+  }
+}
 .btn-paupiette{
   cursor: pointer;
 }

@@ -10,67 +10,95 @@ when "4"
   formule = "Entrée + Plat + Dessert"
 end %>
 <div class="container">
-  <div class="row">
-  <div class="col-lg-7 bkg-light-grey repas-show-container">
-    <div class="row">
-    <div class="col-lg-3 bkg-dark-grey image-repas-show" style="background: url('<%= @repa.image.url %>')">
-
+    <div class="row repas-container">
+        <div class="col-lg-7 bkg-light-grey repas-show-container">
+            <div class="row repas-infos-2">
+                <div class="col-lg-3 bkg-dark-grey image-repas-show" style="background: url('<%= @repa.image.url %>'); padding:0;"></div>
+                <div class="col-lg-9 ">
+                    <p>Prix:
+                        <%= @repa.prix %>€</p>
+                    <p>Date:
+                        <%= @repa.date.strftime("%d/%m/%y") %></p>
+                    <p>
+                        <%= @repa.menu ? "Repas composé de : " + formule : nil %>
+                    </p>
+                    <% if @repa.menu == "Plat seulement" %>
+                    <p>
+                        <%= @repa.plat ? "Plat :" +@repa.plat : nil %>
+                    </p>
+                    <% elsif @repa.menu == "Entrée + Plat" %>
+                    <p>
+                        <%= @repa.entree ? "Entrée : "+@repa.entree : nil %>
+                    </p>
+                    <p>
+                        <%= @repa.plat ? "Plat : " +@repa.plat : nil %>
+                    </p>
+                    <% elsif @repa.menu == "Plat + Dessert" %>
+                    <p>
+                        <%= @repa.plat ? "Plat : " +@repa.plat : nil %>
+                    </p>
+                    <p>
+                        <%= @repa.dessert ? "Desser : " +@repa.dessert : nil %>
+                    </p>
+                <% else @repa.menu == "Entrée + Plat + Dessert" %>
+                    <p>
+                        <%= @repa.entree ? "Entrée : " +@repa.entree : nil %>
+                    </p>
+                    <p>
+                        <%= @repa.plat ? "Plat : " + @repa.plat : nil %>
+                    </p>
+                    <p>
+                        <%= @repa.dessert ? "Dessert : " + @repa.dessert : nil %>
+                    </p>
+                    <% end %>
+                    <% if current_user.id == @repa.user_id %>
+                    <%= link_to 'Modifier mon repas', edit_repa_url(@repa), :class => "btn-paupiette edit-repas" %>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-5 vertical-center flex-columns">
+            <p>Ce repas se passe chez:</p>
+            <div class="avatar" style="background: url(<%= @user.image.url %>)"></div>
+            <p><%= @user.prenom %>
+                <% if Participation.find_by(repa_id: @repa.id, user_id: current_user.id)%>
+                <% if Participation.find_by(repa_id: @repa.id, user_id: current_user.id).is_valid == true %>
+                <%= @user.nom %>
+                <p>Description:
+                    <%= @user.description %></p>
+                <% end %>
+                <% end %></p>
+            <% if Participation.find_by(repa_id: @repa.id, user_id: current_user.id)%>
+            <% if Participation.find_by(repa_id: @repa.id, user_id: current_user.id).is_valid == true %>
+            <p>Telephone:
+                <%= @user.telephone %></p>
+            <p>Adresse:
+                <%= @user.numero_rue %>
+                <%= @user.rue %>
+                <%= @user.code_postal %>
+                <%= @user.ville %></p>
+            <p>Description:
+                <%= @user.description %></p>
+            <% end %>
+            <% end %>
+        </div>
     </div>
-    <div class="col-lg-9">
-      <p>Prix: <%= @repa.prix %>€</p>
-      <p>Date: <%= @repa.date.strftime("%d/%m/%y") %></p>
-      <p>Repas composé de : <%= @repa.menu %> </p>
-      <% if @repa.menu == "Plat seulement" %>
-        <p>Plat : <%= @repa.plat %> </p>
-      <% elsif @repa.menu == "Entrée + Plat" %>
-        <p>Entrée : <%= @repa.entree %> </p>
-        <p>Plat : <%= @repa.plat %> </p>
-      <% elsif @repa.menu == "Plat + Dessert" %>
-        <p>Plat : <%= @repa.plat %> </p>
-        <p>Dessert : <%= @repa.dessert %> </p>
-      <% else @repa.menu == "Entrée + Plat + Dessert" %>
-        <p>Entrée : <%= @repa.entree %> </p>
-        <p>Plat : <%= @repa.plat %> </p>
-        <p>Dessert : <%= @repa.dessert %> </p>
-      <% end %>
-      <% if current_user.id == @repa.user_id %>
-      <%= link_to 'Modifier mon repas', edit_repa_url(@repa), :class => "btn-paupiette m-b-20" %>
-      <% end %>
-    </div>
-  </div>
-  </div>
-  <div class="col-lg-5 vertical-center flex-columns">
-    <p>Ce repas se passe chez:</p>
-    <div class="avatar" style="background: url(<%= @user.image.url %>)">
-
-    </div>
-    <p><%= @user.prenom %>
-   <% if Participation.find_by(repa_id: @repa.id, user_id: current_user.id)%>
-    <% if Participation.find_by(repa_id: @repa.id, user_id: current_user.id).is_valid == true %>
-    <%= @user.nom %>
-    <p>Description: <%= @user.description %></p>
-    <% end %>
-    <% end %></p>
-    <% if Participation.find_by(repa_id: @repa.id, user_id: current_user.id)%>
-    <% if Participation.find_by(repa_id: @repa.id, user_id: current_user.id).is_valid == true %>
-      <p>Telephone: <%= @user.telephone %></p>
-      <p>Adresse: <%= @user.numero_rue %> <%= @user.rue %> <%= @user.code_postal %> <%= @user.ville %></p>
-      <p>Description: <%= @user.description %></p>
-    <% end %>
-    <% end %>
-  </div>
 </div>
-</div>
-<% if current_user.id == @repa.user_id %>
+
+<% if current_user.id == @repa.user_id && @repa.participations.count != 0 %>
+
 <div class="container">
-  <h3>Ils participent à ce repas: </h3>
-  <ul>
-  <% @participations.each do |participation| %>
-    <% user = User.find(participation.user_id) %>
-    <li class="flex m-t-10 align-center"><div class="mini-avatar" style="background: url('<%= user.image.url %>')"></div><%= user.nom %> <%= user.prenom %> <%= link_to "Nouveau message" , new_messages_path(:user_id => user.id) , :class => "btn-paupiette"%></li>
-  <% end %>
-  <% end %>
-</ul>
+    <h3>Ils participent à ce repas:
+    </h3>
+    <ul>
+        <% @participations.each do |participation| %>
+        <% user = User.find(participation.user_id) %>
+        <li class="flex m-t-10 align-center">
+            <div class="mini-avatar" style="background: url('<%= user.image.url %>')"></div>
+            <%= user.nom %>
+            <%= user.prenom %>
+            <%= link_to "Nouveau message" , new_messages_path(:user_id => user.id) , :class => "btn-paupiette", style: "margin-left:30px"%></li>
+        <% end %>
+        <% end %>
+    </ul>
 </div>
-
-<%= link_to 'Back', repas_path %>

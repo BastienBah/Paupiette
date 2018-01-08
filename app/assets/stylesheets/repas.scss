@@ -53,6 +53,37 @@ input:disabled{
   align-items: center;
 }
 
+.repas-container {
+  margin:1em 0;
+}
+
+.repas-infos {
+  padding:1em;
+  width:100%;
+}
+
+.edit-repas {
+  position:absolute;
+  right:0;
+  bottom:-10px;
+}
+
+.valrepas-container {
+  margin-bottom: 2em;
+}
+
+.assist {
+  margin-top:1em;
+}
+.edit-repas-header {
+  display: flex;
+  align-items: center;
+  margin:1em 0;
+  a, img {
+    margin:0 !important;
+  }
+}
+
 .date label{
   width: 100%;
 }
