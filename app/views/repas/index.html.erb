@@ -23,7 +23,18 @@
       <% else %>
         <% compteur = 0 %>
         <% @repas.each do |repa| %>
-          <% if repa.user.ville == get_selected_city && (available_places(repa) > 0)%>
+        <% case repa.menu
+        when "1"
+          formule = "Plat seulement"
+        when "2"
+          formule = "Entrée + Plat"
+        when "3"
+          formule = "Plat + Dessert"
+        when "4"
+          formule = "Entrée + Plat + Dessert"
+        end %>
+
+          <% if repa.user.ville == get_selected_city %>
           <% compteur+= 1 %>
 
               <div class="row repas">
@@ -33,7 +44,7 @@
                   <div class="col-lg-3 p-15">
                     <h2><%= repa.titre %></h2>
                     <p class="sous-titre">chez <%= repa.user.prenom %></p>
-                    <p class="font-dark-grey no-margin-b"><%= repa.menu %><p>
+                    <p class="font-dark-grey no-margin-b"><%= formule %><p>
                     <%= link_to 'voir plus...', repa, :class => 'repas-show' %>
                     <% if current_user.id == repa.id %>
                       <%= link_to 'Edit', edit_repa_path(repa) %>

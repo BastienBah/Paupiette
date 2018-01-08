@@ -1,30 +1,21 @@
 <p id="notice"><%= notice %></p>
-<% case @repa.menu
-when "1"
-  formule = "Plat seulement"
-when "2"
-  formule = "Entrée + Plat"
-when "3"
-  formule = "Plat + Dessert"
-when "4"
-  formule = "Entrée + Plat + Dessert"
-end %>
+
 <div class="container">
     <div class="row repas-container">
         <div class="col-lg-7 bkg-light-grey repas-show-container">
             <div class="row repas-infos-2">
                 <div class="col-lg-3 bkg-dark-grey image-repas-show" style="background: url('<%= @repa.image.url %>'); padding:0;"></div>
-                <div class="col-lg-9 ">
+                <div class="col-lg-9 repas-infos">
                     <p>Prix:
                         <%= @repa.prix %>€</p>
                     <p>Date:
                         <%= @repa.date.strftime("%d/%m/%y") %></p>
                     <p>
-                        <%= @repa.menu ? "Repas composé de : " + formule : nil %>
+                        <%= "Repas composé de : " + @repa.menu%>
                     </p>
                     <% if @repa.menu == "Plat seulement" %>
                     <p>
-                        <%= @repa.plat ? "Plat :" +@repa.plat : nil %>
+                        <%= @repa.plat ? "Plat :" + @repa.plat : nil %>
                     </p>
                     <% elsif @repa.menu == "Entrée + Plat" %>
                     <p>
