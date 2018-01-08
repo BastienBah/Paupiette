@@ -181,14 +181,38 @@
       <div class="container">
         <div class="inner-footer">
           <div class="footer-box">
+            <h2 class="box-footer-title">A propos de Paupiette</h2>
+            <div class="box-footer-content">
+              <ul>
+                <li><a href="">Qui sommes nous ?</a></li>
+                <li><a href="">Nous rejoindre</a></li>
+                <li><a href="">Presse</a></li>
+                <li><a href="<%= contact_path%>">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer-box">
+            <h2 class="box-footer-title">Mentions légales</h2>
+            <div class="box-footer-content">
+              <ul>
+                <li><a href="<%= cgu_path%>">Conditions Générales d'Utilisations</a></li>
+                <li><a href="">Règles de diffusion</a></li>
+                <li><a href="">Conditions Générales de Vente</a></li>
+                <li><a href="">Vie privée et cookies</a></li>
+
+              </ul>
+            </div>
+          </div>
+          <div class="footer-box">
             <h2 class="box-footer-title">Infos Pratiques</h2>
             <div class="box-footer-content">
-            <ul>
-              <li><a href="">Comment ça marche ?</a></li>
-              <li><a href="<%= confiance_path %>">Confiance et sérénité</a></li>
-              <li><a href="">CGV</a></li>
-            </ul>
-          </div>
+              <ul>
+                <li><a href="">Comment ça marche ?</a></li>
+                <li><a href="<%= confiance_path %>">Confiance et sérénité</a></li>
+                <li><a href="">Niveau d'expérience</a></li>
+                <li><a href="<%= cgu_path%>">Conditions Générales d'Utilisations</a></li>
+              </ul>
+            </div>
           </div>
         </div>
         <div class="footer-line">

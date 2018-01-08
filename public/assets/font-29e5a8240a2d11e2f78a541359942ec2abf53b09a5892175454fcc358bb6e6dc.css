@@ -1,0 +1,12 @@
+@font-face {
+  font-family: 'playlistscript';
+  src: url(/assets/Playlist_Script-4a2ebf308b737499dcd1eef2a5cb0edf756089ea4eca0b811034ab41c4dbca8f.otf) format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'please_write_me_a_songmedium';
+  src: url(/fonts/font-bof-webfont.woff2) format("woff2"), url(/fonts/font-bof-webfont.woff) format("woff");
+  font-weight: normal;
+  font-style: normal;
+}

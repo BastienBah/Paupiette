@@ -1,0 +1,505 @@
+@charset "UTF-8";
+@media only screen and (max-width: 500px) {
+  /* line 6, /Users/mathieu/Sites/Paupiette/app/assets/stylesheets/home.scss */
+  section.home1 {
+    color: #FFFFFF;
+    background-position: 650px !important;
+  }
+}
+/* line 12, /Users/mathieu/Sites/Paupiette/app/assets/stylesheets/home.scss */
+.padding-mission {
+  padding: 40px 0px;
+}
+
+/* line 16, /Users/mathieu/Sites/Paupiette/app/assets/stylesheets/home.scss */
+section.home1 {
+  background: url(/assets/image_repas-7741cb7ef539155a594f097c7538fdf5c39c1105d5a1adf8babcde5ead232260.png);
+  background-size: cover !important;
+  background-position: right !important;
+}
+
+/* line 23, /Users/mathieu/Sites/Paupiette/app/assets/stylesheets/home.scss */
+.mamie::before {
+  content: ' ';
+  display: inline-block;
+  position: absolute;
+  background: url(/assets/expli2-6bc52e5a261a36bbf4c1f5d3c1018f41a497e41918aaddb78780f903d257a789.png) no-repeat;
+  background-size: contain;
+  height: 10px;
+  width: 10px;
+  top: 5px;
+  right: 22px;
+}
+
+/* line 35, /Users/mathieu/Sites/Paupiette/app/assets/stylesheets/home.scss */
+.selfie {
+  height: 15em;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+}
+
+/* line 42, /Users/mathieu/Sites/Paupiette/app/assets/stylesheets/home.scss */
+.concept {
+  padding-top: 20px;
+  padding-bottom: 0px;
+  font-size: 70px;
+}
+
+/* line 48, /Users/mathieu/Sites/Paupiette/app/assets/stylesheets/home.scss */
+.chou-fleur {
+  height: 300px;
+  background-repeat: no-repeat !important;
+  background-size: contain !important;
+  background-position: center !important;
+}
+
+/* line 55, /Users/mathieu/Sites/Paupiette/app/assets/stylesheets/home.scss */
+.explication h2 {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+/* line 61, /Users/mathieu/Sites/Paupiette/app/assets/stylesheets/home.scss */
+.la-fame {
+  height: 500px;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+}
+
+/* line 68, /Users/mathieu/Sites/Paupiette/app/assets/stylesheets/home.scss */
+.explication ol {
+  padding-left: 15px;
+}
+
+/* line 72, /Users/mathieu/Sites/Paupiette/app/assets/stylesheets/home.scss */
+.explication {
+  font-size: 25px;
+}
+
+/* line 76, /Users/mathieu/Sites/Paupiette/app/assets/stylesheets/home.scss */
+.list-explication {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+/* line 82, /Users/mathieu/Sites/Paupiette/app/assets/stylesheets/home.scss */
+.list-explication h4 {
+  font-weight: 900;
+  color: #5B1633;
+  font-size: 27px;
+}
+
+/* line 88, /Users/mathieu/Sites/Paupiette/app/assets/stylesheets/home.scss */
+.list-explication {
+  counter-reset: item;
+}
+
+/* line 91, /Users/mathieu/Sites/Paupiette/app/assets/stylesheets/home.scss */
+.list-explication ol {
+  list-style: none;
+}
+
+/* line 94, /Users/mathieu/Sites/Paupiette/app/assets/stylesheets/home.scss */
+.list-explication li {
+  counter-increment: item;
+  margin-bottom: 5px;
+  list-style: none;
+}
+
+/* line 100, /Users/mathieu/Sites/Paupiette/app/assets/stylesheets/home.scss */
+.les-partenaires img {
+  max-height: 80px;
+  width: auto;
+  margin: 20px;
+}
+
+/* line 106, /Users/mathieu/Sites/Paupiette/app/assets/stylesheets/home.scss */
+.les-partenaires {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media screen and (max-width: 1000px) {
+  /* line 112, /Users/mathieu/Sites/Paupiette/app/assets/stylesheets/home.scss */
+  .les-partenaires {
+    display: block;
+  }
+}
+@media screen and (max-width: 500px) {
+  /* line 118, /Users/mathieu/Sites/Paupiette/app/assets/stylesheets/home.scss */
+  .resbutton, .parbutton {
+    display: none;
+  }
+
+  /* line 122, /Users/mathieu/Sites/Paupiette/app/assets/stylesheets/home.scss */
+  .responsiveres {
+    display: block !important;
+  }
+
+  /* line 126, /Users/mathieu/Sites/Paupiette/app/assets/stylesheets/home.scss */
+  .repas {
+    font-size: 10px;
+  }
+
+  /* line 130, /Users/mathieu/Sites/Paupiette/app/assets/stylesheets/home.scss */
+  .price {
+    font-size: 20px !important;
+  }
+
+  /* line 134, /Users/mathieu/Sites/Paupiette/app/assets/stylesheets/home.scss */
+  .repas h2 {
+    font-size: 13px;
+  }
+
+  /* line 138, /Users/mathieu/Sites/Paupiette/app/assets/stylesheets/home.scss */
+  .repas .sous-titre {
+    font-size: 10px;
+  }
+
+  /* line 141, /Users/mathieu/Sites/Paupiette/app/assets/stylesheets/home.scss */
+  .resparbutton, .resresbutton {
+    display: block;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin: auto;
+  }
+
+  /* line 147, /Users/mathieu/Sites/Paupiette/app/assets/stylesheets/home.scss */
+  .tiny-container {
+    width: 100%;
+    padding: 10px;
+  }
+
+  /* line 152, /Users/mathieu/Sites/Paupiette/app/assets/stylesheets/home.scss */
+  .repas {
+    padding-bottom: 0;
+  }
+}
+/* line 157, /Users/mathieu/Sites/Paupiette/app/assets/stylesheets/home.scss */
+.dashboard {
+  margin-top: 10px;
+}
+
+@media screen and (max-width: 720px) {
+  /* line 162, /Users/mathieu/Sites/Paupiette/app/assets/stylesheets/home.scss */
+  .list-explication {
+    -webkit-box-orient: vertical !important;
+    -webkit-box-direction: normal !important;
+        -ms-flex-direction: column !important;
+            flex-direction: column !important;
+  }
+
+  /* line 166, /Users/mathieu/Sites/Paupiette/app/assets/stylesheets/home.scss */
+  .list-explication li {
+    width: 100% !important;
+  }
+
+  /* line 170, /Users/mathieu/Sites/Paupiette/app/assets/stylesheets/home.scss */
+  .la-fame {
+    background-position: top !important;
+    background-size: cover !important;
+  }
+
+  /* line 175, /Users/mathieu/Sites/Paupiette/app/assets/stylesheets/home.scss */
+  .title-follow-footer {
+    font-size: 11px;
+  }
+
+  /* line 179, /Users/mathieu/Sites/Paupiette/app/assets/stylesheets/home.scss */
+  .padding-mission {
+    padding: 20px 0px;
+  }
+}
+/* line 184, /Users/mathieu/Sites/Paupiette/app/assets/stylesheets/home.scss */
+.list-explication li h4:before {
+  margin-right: 10px;
+  content: counter(item) ".";
+  color: #5B1633;
+  font-size: 27px;
+  text-align: center;
+  display: inline-block;
+}
+
+/* line 193, /Users/mathieu/Sites/Paupiette/app/assets/stylesheets/home.scss */
+.repas-show-container {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin: 60px auto;
+  padding: 0;
+}
+
+/* line 199, /Users/mathieu/Sites/Paupiette/app/assets/stylesheets/home.scss */
+.mobile-list {
+  font-size: 15px;
+  padding-top: 25px;
+}
+
+/* line 204, /Users/mathieu/Sites/Paupiette/app/assets/stylesheets/home.scss */
+.btn-paupiette {
+  border: none;
+}
+
+/* line 208, /Users/mathieu/Sites/Paupiette/app/assets/stylesheets/home.scss */
+.message-input {
+  border-radius: 13px;
+}
+
+/* line 212, /Users/mathieu/Sites/Paupiette/app/assets/stylesheets/home.scss */
+.flex-columns {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+/* line 216, /Users/mathieu/Sites/Paupiette/app/assets/stylesheets/home.scss */
+.next-container {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+/* line 220, /Users/mathieu/Sites/Paupiette/app/assets/stylesheets/home.scss */
+.text-left {
+  text-align: left;
+  width: 100%;
+}
+
+/* line 225, /Users/mathieu/Sites/Paupiette/app/assets/stylesheets/home.scss */
+.les-copains {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* line 230, /Users/mathieu/Sites/Paupiette/app/assets/stylesheets/home.scss */
+.percent {
+  margin-left: 40%;
+}
+
+/* line 234, /Users/mathieu/Sites/Paupiette/app/assets/stylesheets/home.scss */
+.patrick {
+  font-family: 'Patrick Hand SC', cursive;
+  font-size: 35px;
+  margin-bottom: 40px;
+}
+
+/* line 240, /Users/mathieu/Sites/Paupiette/app/assets/stylesheets/home.scss */
+.cuisine, .glouton {
+  margin-top: 10px;
+  padding: 15px 20px;
+}
+
+/* line 245, /Users/mathieu/Sites/Paupiette/app/assets/stylesheets/home.scss */
+.inner-footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 30px;
+}
+
+/* line 251, /Users/mathieu/Sites/Paupiette/app/assets/stylesheets/home.scss */
+.inner-footer ul {
+  padding: 0px;
+}
+
+/* line 255, /Users/mathieu/Sites/Paupiette/app/assets/stylesheets/home.scss */
+.inner-footer ul li {
+  font-size: 16px;
+  color: #F8F7F7;
+}
+
+/* line 260, /Users/mathieu/Sites/Paupiette/app/assets/stylesheets/home.scss */
+.inner-footer ul li a {
+  font-size: 16px;
+  color: #A0A0A0 !important;
+}
+
+/* line 265, /Users/mathieu/Sites/Paupiette/app/assets/stylesheets/home.scss */
+.inner-footer h2 {
+  text-transform: uppercase;
+  font-size: 18px;
+  color: #5B1633;
+}
+
+/* line 271, /Users/mathieu/Sites/Paupiette/app/assets/stylesheets/home.scss */
+.playlist {
+  font-family: 'playlistscript';
+  margin-left: 1em;
+}
+
+/* line 276, /Users/mathieu/Sites/Paupiette/app/assets/stylesheets/home.scss */
+.text-center {
+  text-align: center;
+}
+
+/* line 280, /Users/mathieu/Sites/Paupiette/app/assets/stylesheets/home.scss */
+.les-copains {
+  padding-top: 30px;
+}
+
+/* line 284, /Users/mathieu/Sites/Paupiette/app/assets/stylesheets/home.scss */
+.logo-center {
+  height: 100px;
+}
+
+/* line 289, /Users/mathieu/Sites/Paupiette/app/assets/stylesheets/home.scss */
+.navbar-paupiette {
+  z-index: 999999;
+  height: 80px;
+}
+
+/* line 295, /Users/mathieu/Sites/Paupiette/app/assets/stylesheets/home.scss */
+.fixed {
+  position: fixed;
+  width: 100%;
+}
+
+/* line 300, /Users/mathieu/Sites/Paupiette/app/assets/stylesheets/home.scss */
+.purple-button {
+  background: #5B1633;
+  color: #FFFFFF;
+  padding: 15px 20px 15px 20px;
+}
+
+/* line 306, /Users/mathieu/Sites/Paupiette/app/assets/stylesheets/home.scss */
+ul {
+  list-style: none;
+}
+
+/* line 310, /Users/mathieu/Sites/Paupiette/app/assets/stylesheets/home.scss */
+li a {
+  color: #494848;
+}
+
+/* line 314, /Users/mathieu/Sites/Paupiette/app/assets/stylesheets/home.scss */
+div.content {
+  padding-top: 80px;
+}
+
+/* line 318, /Users/mathieu/Sites/Paupiette/app/assets/stylesheets/home.scss */
+.singin {
+  margin-top: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+/* line 324, /Users/mathieu/Sites/Paupiette/app/assets/stylesheets/home.scss */
+.singin > a  {
+  margin: 0 0.5em;
+}
+
+/* line 329, /Users/mathieu/Sites/Paupiette/app/assets/stylesheets/home.scss */
+.baseline {
+  padding: 55px 0;
+}
+
+/* line 334, /Users/mathieu/Sites/Paupiette/app/assets/stylesheets/home.scss */
+.baseline-secondline, .baseline-firstline {
+  font-size: 40px;
+}
+
+/* line 338, /Users/mathieu/Sites/Paupiette/app/assets/stylesheets/home.scss */
+.baseline h2 {
+  font-size: 17px;
+}
+
+/* line 342, /Users/mathieu/Sites/Paupiette/app/assets/stylesheets/home.scss */
+.font-playlist {
+  font-family: 'playlistscript';
+}
+
+/* line 346, /Users/mathieu/Sites/Paupiette/app/assets/stylesheets/home.scss */
+.transform {
+  -webkit-transform: translateY(16px);
+          transform: translateY(16px);
+}
+
+/* line 350, /Users/mathieu/Sites/Paupiette/app/assets/stylesheets/home.scss */
+.spbt {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify !important;
+      -ms-flex-pack: justify !important;
+          justify-content: space-between !important;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+/* line 360, /Users/mathieu/Sites/Paupiette/app/assets/stylesheets/home.scss */
+.navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100px;
+}
+
+/* line 367, /Users/mathieu/Sites/Paupiette/app/assets/stylesheets/home.scss */
+.spbt {
+  -ms-flex-pack: distribute !important;
+      justify-content: space-around !important;
+}
+
+/* line 371, /Users/mathieu/Sites/Paupiette/app/assets/stylesheets/home.scss */
+.responsiveres {
+  display: none;
+}
+
+/* line 375, /Users/mathieu/Sites/Paupiette/app/assets/stylesheets/home.scss */
+.contactbutton:hover {
+  background: #FFFFFF !important;
+}
+
+/* line 379, /Users/mathieu/Sites/Paupiette/app/assets/stylesheets/home.scss */
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+/* line 383, /Users/mathieu/Sites/Paupiette/app/assets/stylesheets/home.scss */
+.part-list {
+  margin: 3em 0;
+  padding: 2em 1em;
+}
+/* line 386, /Users/mathieu/Sites/Paupiette/app/assets/stylesheets/home.scss */
+.part-list h2 {
+  margin: 0 auto 1em;
+}
+/* line 389, /Users/mathieu/Sites/Paupiette/app/assets/stylesheets/home.scss */
+.part-list li {
+  margin: 0.5em auto;
+}
+/* line 391, /Users/mathieu/Sites/Paupiette/app/assets/stylesheets/home.scss */
+.part-list li a {
+  color: white;
+  margin-left: 2em;
+  padding: 0.5em 1em;
+}

@@ -1,0 +1,11 @@
+/* line 1, /Users/mathieu/Sites/Paupiette/app/assets/stylesheets/confiance.scss */
+.paragraphe1 {
+  margin-top: 50px;
+}
+
+/* line 5, /Users/mathieu/Sites/Paupiette/app/assets/stylesheets/confiance.scss */
+.paragraphe p {
+  color: #5B1633;
+  font-weight: bold;
+  margin-top: 40px;
+}

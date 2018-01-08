@@ -1,0 +1,104 @@
+/* line 1, /Users/mathieu/Sites/Paupiette/app/assets/stylesheets/general.scss */
+button,
+input[type=reset],
+input[type=button],
+input[type=submit],
+input[type=checkbox],
+input[type=radio],
+select {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 15, /Users/mathieu/Sites/Paupiette/app/assets/stylesheets/general.scss */
+.vertical-center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+/* line 21, /Users/mathieu/Sites/Paupiette/app/assets/stylesheets/general.scss */
+.fw-100 {
+  font-weight: 100;
+}
+
+/* line 22, /Users/mathieu/Sites/Paupiette/app/assets/stylesheets/general.scss */
+.fw-200 {
+  font-weight: 200;
+}
+
+/* line 23, /Users/mathieu/Sites/Paupiette/app/assets/stylesheets/general.scss */
+.fw-300 {
+  font-weight: 300;
+}
+
+/* line 24, /Users/mathieu/Sites/Paupiette/app/assets/stylesheets/general.scss */
+.fw-400 {
+  font-weight: 400;
+}
+
+/* line 25, /Users/mathieu/Sites/Paupiette/app/assets/stylesheets/general.scss */
+.fw-500 {
+  font-weight: 500;
+}
+
+/* line 26, /Users/mathieu/Sites/Paupiette/app/assets/stylesheets/general.scss */
+.fw-600 {
+  font-weight: 600;
+}
+
+/* line 27, /Users/mathieu/Sites/Paupiette/app/assets/stylesheets/general.scss */
+.fw-700 {
+  font-weight: 700;
+}
+
+/* line 28, /Users/mathieu/Sites/Paupiette/app/assets/stylesheets/general.scss */
+.fw-800 {
+  font-weight: 800;
+}
+
+/* line 29, /Users/mathieu/Sites/Paupiette/app/assets/stylesheets/general.scss */
+.fw-900 {
+  font-weight: 900;
+}
+
+/* line 31, /Users/mathieu/Sites/Paupiette/app/assets/stylesheets/general.scss */
+.text-center {
+  text-align: center;
+}
+
+/* line 35, /Users/mathieu/Sites/Paupiette/app/assets/stylesheets/general.scss */
+.black {
+  color: #000000;
+}
+
+/* line 39, /Users/mathieu/Sites/Paupiette/app/assets/stylesheets/general.scss */
+.fs-30 {
+  font-size: 30px;
+}
+
+/* line 41, /Users/mathieu/Sites/Paupiette/app/assets/stylesheets/general.scss */
+.m-b-5 {
+  margin-bottom: 5px;
+}
+
+/* line 42, /Users/mathieu/Sites/Paupiette/app/assets/stylesheets/general.scss */
+.m-b-10 {
+  margin-bottom: 10px;
+}
+
+/* line 43, /Users/mathieu/Sites/Paupiette/app/assets/stylesheets/general.scss */
+.m-b-20 {
+  margin-bottom: 20px;
+}
+
+/* line 45, /Users/mathieu/Sites/Paupiette/app/assets/stylesheets/general.scss */
+.m-t-10 {
+  margin-top: 10px;
+}
