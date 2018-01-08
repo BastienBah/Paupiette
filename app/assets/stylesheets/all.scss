@@ -229,6 +229,31 @@ input[type=radio]:focus{
   color: #5B1633;
   font-weight: 900;
   letter-spacing: 2px;
+  padding: 1em 2em;
+  display: flex;
+  flex-direction: column;
+  label {
+    margin:0;
+  }
+}
+
+.role-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  input#user_role_false {
+    margin-left: 30px;
+  }
+
+  input,label {
+    align-self: center;
+  }
+  label {
+    margin:0;
+  }
+  input {
+    margin:0 5px;
+  }
 }
 
 .repas{
