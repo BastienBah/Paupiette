@@ -12,9 +12,11 @@ User.create( email: "papi@gmail.com", created_at: "2017-11-14 10:27:38", updated
 #STUDENT
 User.create( email: "student@gmail.com", created_at: "2017-11-14 10:27:38", updated_at: "2017-11-14 10:29:50", admin: false, password: "azerty",role: false, ville: "Bordeaux", code_postal: nil, rue: nil, numero_rue: nil, complement_adresse: nil, nom: nil, prenom: "Josette", telephone: nil, quartier: nil )
 
-User.create( email: "parisien@gmail.com", created_at: "2017-11-14 10:27:38", updated_at: "2017-11-14 10:29:50", admin: false, password: "azerty",role: false, ville: "Paris", code_postal: nil, rue: nil, numero_rue: nil, complement_adresse: nil, nom: nil, prenom: "Booba", telephone: nil, quartier: nil )
+User.create( email: "parisien@gmail.com", created_at: "2017-11-14 10:27:38", updated_at: "2017-11-14 10:29:50", admin: true, password: "azerty",role: false, ville: "Paris", code_postal: nil, rue: nil, numero_rue: nil, complement_adresse: nil, nom: nil, prenom: "Booba", telephone: nil, quartier: nil )
 
 User.create( email: "admin@admin.com", created_at: "2017-11-14 10:27:38", updated_at: "2017-11-14 10:29:50", admin: true, password: "azerty",role: nil, ville: "Paris", code_postal: nil, rue: nil, numero_rue: nil, complement_adresse: nil, nom: nil, prenom: "Booba", telephone: nil, quartier: nil )
+
+User.create( email: "matharribey@gmail.com", created_at: "2017-11-14 10:27:38", updated_at: "2017-11-14 10:29:50", admin: true, password: "azerty",role: "true", ville: "Paris", code_postal: "75009", rue: "Romy", numero_rue: "1", complement_adresse: nil, nom: "Harribey", prenom: "Mat", telephone: nil, quartier: "9eme")
 
 Repa.destroy_all
 

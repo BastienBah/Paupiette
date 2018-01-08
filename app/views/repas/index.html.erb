@@ -51,7 +51,11 @@
                     <% end %>
                   </div>
                   <div class="col-lg-3 p-15 font-dark-grey">
+                    <% if repa.user.ville == "Paris" %>
+                    <p>dans le <%= repa.user.quartier? ? (repa.user.quartier + ", ") : nil %> <%= repa.user.ville %> le <%= repa.date.strftime("%d/%m/%y") %></p>
+                    <% else %>
                     <p>à <%= repa.user.quartier? ? (repa.user.quartier + ", ") : nil %> <%= repa.user.ville %> le <%= repa.date.strftime("%d/%m/%y") %></p>
+                    <% end %>
                     <br>
                     <p> Il reste <b><%= available_places(repa) %></b> places. </p>
                   </div>
