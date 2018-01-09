@@ -6,4 +6,7 @@ class HomeController < ApplicationController
   def participation
     @participations = Participation.all
   end
+
+  def cgu
+  end
 end
