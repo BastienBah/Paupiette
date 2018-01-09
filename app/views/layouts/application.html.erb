@@ -83,7 +83,7 @@
         <% if !user_signed_in? %>
         <%= link_to 'Inscription', new_user_registration_path, :class => "letter-2 purple-button" %>
         <% else %>
-        <%= link_to 'Deconnexion', destroy_user_session_path, method: :delete%>
+        <%= link_to 'Deconnexion', destroy_user_session_path, method: :delete, :class => "letter-2 purple-button"%>
         <% end %>
       </div>
     </div>
