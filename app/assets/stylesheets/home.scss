@@ -2,12 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-@media only screen and (max-width: 500px) {
-  section.home1{
-    color: #FFFFFF;
-    background-position: 650px!important;
-  }
-}
+
 
 .padding-mission{
   padding: 40px 0px;
@@ -108,80 +103,8 @@ section.home1{
   justify-content: space-between;
 }
 
-@media screen and (max-width: 1000px) {
-  .les-partenaires {
-    display: block;
-  }
-}
-
-@media screen and (max-width: 500px) {
-  .resbutton, .parbutton{
-    display: none;
-  }
-
-  .responsiveres{
-    display: block!important;
-  }
-
-  .repas {
-    font-size: 10px;
-  }
-
-  .price{
-    font-size: 20px!important;
-  }
-
-  .repas h2{
-    font-size: 13px;
-  }
-
-  .repas .sous-titre{
-    font-size: 10px
-  }
-  .resparbutton, .resresbutton{
-    display: block;
-    width: fit-content;
-    margin: auto;
-  }
-
-  .tiny-container{
-    width: 100%;
-    padding: 10px
-  }
-
-  .repas{
-    padding-bottom: 0;
-  }
-}
-
 .dashboard{
   margin-top: 10px
-}
-
-@media screen and (max-width: 720px) {
-  .list-explication{
-    flex-direction: column!important;
-  }
-
-  .list-explication li{
-    width: 100%!important;
-  }
-
-  .la-fame{
-    background-position: top!important;
-    background-size: cover!important;
-  }
-
-  .title-follow-footer{
-    font-size: 11px;
-  }
-
-  .padding-mission{
-    padding: 20px 0px
-  }
-  .cgu-container {
-    width:98%;
-  }
 }
 
 .cgu-container {
@@ -228,7 +151,7 @@ section.home1{
 }
 
 .btn-paupiette{
-  border: none
+  border: none;
 }
 
 .message-input{
@@ -379,10 +302,6 @@ div.content{
   align-items: center;
 }
 
-.onglet-right{
-
-}
-
 .navbar{
   display: flex;
   justify-content: center;
@@ -419,5 +338,84 @@ body{
       margin-left: 2em;
       padding:0.5em 1em;
     }
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  section.home1{
+    color: #FFFFFF;
+    background-position: 650px!important;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .list-explication{
+    flex-direction: column!important;
+  }
+
+  .list-explication li{
+    width: 100%!important;
+  }
+
+  .la-fame{
+    background-position: top!important;
+    background-size: cover!important;
+  }
+
+  .title-follow-footer{
+    font-size: 11px;
+  }
+
+  .padding-mission{
+    padding: 20px 0px;
+  }
+  .cgu-container {
+    width:98%;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .les-partenaires {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .resbutton, .parbutton{
+    display: none;
+  }
+
+  .responsiveres{
+    display: block!important;
+  }
+
+  .repas {
+    font-size: 10px;
+  }
+
+  .price{
+    font-size: 20px!important;
+  }
+
+  .repas h2{
+    font-size: 13px;
+  }
+
+  .repas .sous-titre{
+    font-size: 10px
+  }
+  .resparbutton, .resresbutton{
+    display: block;
+    width: fit-content;
+    margin: auto;
+  }
+
+  .tiny-container{
+    width: 100%;
+    padding: 10px
+  }
+
+  .repas{
+    padding-bottom: 0;
   }
 }
