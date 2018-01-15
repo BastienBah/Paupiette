@@ -5,17 +5,17 @@
         <div class="col-lg-7 bkg-light-grey repas-show-container">
             <div class="row repas-infos-2">
                 <div class="col-lg-3 bkg-dark-grey image-repas-show" style="background: url('<%= @repa.image.url %>'); padding:0;"></div>
-                <div class="col-lg-9 repas-infos">
-                    <p>Prix:
+                  <div class="col-lg-9 repas-infos">
+                    <p>Prix :
                         <%= @repa.prix %>€</p>
-                    <p>Date:
-                        <%= @repa.date.strftime("%d/%m/%y") %></p>
+                    <p>Date :
+                        <%= @repa.date.strftime("%d/%m/%y") + " à " + @repa.date.strftime("%Hh%M")+"." %></p>
                     <p>
                         <%= "Repas composé de : " + @repa.menu%>
                     </p>
                     <% if @repa.menu == "Plat seulement" %>
                     <p>
-                        <%= @repa.plat ? "Plat :" + @repa.plat : nil %>
+                        <%= @repa.plat ? "Plat : " + @repa.plat : nil %>
                     </p>
                     <% elsif @repa.menu == "Entrée + Plat" %>
                     <p>
@@ -29,7 +29,7 @@
                         <%= @repa.plat ? "Plat : " +@repa.plat : nil %>
                     </p>
                     <p>
-                        <%= @repa.dessert ? "Desser : " +@repa.dessert : nil %>
+                        <%= @repa.dessert ? "Dessert : " +@repa.dessert : nil %>
                     </p>
                 <% else @repa.menu == "Entrée + Plat + Dessert" %>
                     <p>

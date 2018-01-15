@@ -42,7 +42,7 @@
 
                         <div class="field date">
                             <%= f.label :date %>
-                            <%= f.datetime_select :date, :default => @date %>
+                            <%= f.datetime_select :date, :default => @date, required: true %>
                         </div>
                         <br>
                         <i>Date supérieure à 7 jours*</i>
