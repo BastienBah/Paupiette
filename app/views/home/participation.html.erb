@@ -1,27 +1,30 @@
+<% if current_user.admin? %>
+  <div class="container">
+    <div class="bkg-light-grey part-list">
+      <h2 class="font-violet">Gérer les participations aux repas</h2>
 
-<div class="container">
-  <div class="bkg-light-grey part-list">
-    <h2 class="font-violet">Gérer les participations aux repas</h2>
-
-    <% if Participation.count.zero? %>
-    <p> Il n'y a aucune participation à gérer pour l'instant. </p>
-    <% else %>
-      <ul>
-        <% @participations.each do |part| %>
-            <li>
-              <div class="row m-b-20">
-              <div class="col-lg-6"><%= User.find(part.user_id).prenom %> participe au repas "<%= Repa.find(part.repa_id).titre %>" chez <%= User.find(part.repa.user_id).prenom %>, prévu le <%= Repa.find(part.repa_id).date.strftime("%d/%m/%y") %></div>
-              <div class="col-lg-2"><%= link_to "Supprimer", repa_participation_path(part.repa_id,part.id), method: :delete, data: { confirm: 'Êtes-vous sûr ?' }, class: "bkg-violet"  %></div>
-              <div class="col-lg-2"><%= link_to "Contacter", new_messages_path(:user_id => User.find(part.user_id)),class:"bkg-med-grey"%></div>
-              <% if part.is_valid != true %>
-              <div class="col-lg-2"><%= link_to "Valider", validate_path(part.id), method: :patch, class:"valbutton" %></div>
-              <% else %>
-              <div class="black">Validé</div>
-              <% end %>
-            </div>
-            </li>
-        <% end %>
-      <ul>
-    <% end %>
+      <% if Participation.count.zero? %>
+      <p> Il n'y a aucune participation à gérer pour l'instant. </p>
+      <% else %>
+        <ul>
+          <% @participations.each do |part| %>
+              <li>
+                <div class="row m-b-20">
+                <div class="col-lg-6"><%= User.find(part.user_id).prenom %> participe au repas "<%= Repa.find(part.repa_id).titre %>" chez <%= User.find(part.repa.user_id).prenom %>, prévu le <%= Repa.find(part.repa_id).date.strftime("%d/%m/%y") %></div>
+                <div class="col-lg-2"><%= link_to "Supprimer", repa_participation_path(part.repa_id,part.id), method: :delete, data: { confirm: 'Êtes-vous sûr ?' }, class: "bkg-violet"  %></div>
+                <div class="col-lg-2"><%= link_to "Contacter", new_messages_path(:user_id => User.find(part.user_id)),class:"bkg-med-grey"%></div>
+                <% if part.is_valid != true %>
+                <div class="col-lg-2"><%= link_to "Valider", validate_path(part.id), method: :patch, class:"valbutton" %></div>
+                <% else %>
+                <div class="black">Validé</div>
+                <% end %>
+              </div>
+              </li>
+          <% end %>
+        <ul>
+      <% end %>
+    </div>
   </div>
-</div>
+<% else %>
+  <%= raise ActionController::RoutingError.new('Not Found') %>
+<% end %>
