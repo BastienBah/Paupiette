@@ -9,13 +9,18 @@
     </ul>
   </div>
 <% end %>
+<div class="last-message container">
+  <% if @last_message %>
+  <p>Dernier message de <%= User.find(params[:user_id]).prenom %>: <%= @last_message.message %></p>
+  <% end %>
+</div>
 <div class="container new-message">
-<h1 class="apple-title">Envoi d'un message à <%= User.find(params[:user_id]).prenom %> <%= User.find(params[:user_id]).nom %></h1>
+<h1 class="apple-title full-width">Envoi d'un message à <%= User.find(params[:user_id]).prenom %> <%= User.find(params[:user_id]).nom %></h1>
 
 <%= form_for(@message) do |f| %>
   <%= f.hidden_field :dest_id, :value => params[:user_id] %>
-  <%= f.text_area :message, :class => "message-input" %>
+  <%= f.text_area :message, :class => "message-input full-width" %>
 
-  <%= f.submit "Envoyer", :class => "btn-paupiette" %>
+  <%= f.submit "Envoyer", :class => "btn-paupiette full-width" %>
 <% end %>
 </div>

@@ -11,7 +11,7 @@
       <h4 class="apple-title">Messages</h4>
       <% if @messages.length != 0 %>
         <% @messages.each do |message| %>
-          <div class="message-container">
+          <div class="message-container width-80">
           <p class="sendername"><%= User.find(message.sender_id).prenom %> <%= User.find(message.sender_id).nom %></p>
           <p class="messagebody"><%= message.message %></p>
           <%= link_to "Répondre" , new_messages_path(:user_id => message.sender_id) , :class => "answermessage"%>

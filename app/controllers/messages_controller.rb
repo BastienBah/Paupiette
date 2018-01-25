@@ -2,6 +2,7 @@ class MessagesController < ApplicationController
 
   def new
     @message = Message.new
+    @last_message = Message.where(dest_id: current_user.id).last
   end
 
   def create

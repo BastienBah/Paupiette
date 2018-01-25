@@ -11,12 +11,16 @@
   vertical-align: middle;
 }
 
+.width-80{width: 80%!important;}
+
 
 #notice {
   color: white !important;
   margin:0 auto !important;
   width:100vw !important;
 }
+
+.full-width{width: 100%;}
 
 .padding-notice {
   padding:0.5em !important;
@@ -759,6 +763,13 @@ margin-bottom: 5px;
   padding: 5px;
   margin-top: 5px;
   transition: .3s all;
+}
+
+@media (max-width: 500px) {
+
+  .answermessage{
+    margin-left: 70%;  
+  }
 }
 
 .messagebkg{
